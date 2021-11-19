@@ -1,0 +1,297 @@
+<!-- Header -->
+<header class="border-md">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-2 py-md-6">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="assets/images/Logo-desktop.png" class="d-none d-md-block" width="240" height="32"
+                    alt="Logo-desktop">
+                <img src="assets/images/Logo-mobile.png" class="d-block d-md-none" width="118" height="30"
+                    alt="Logo-mobile">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="spots-search.html" class="nav-link px-0 ms-5">探索景點</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="activity-search.html" class="nav-link px-0 ms-5">節慶活動</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="restaurant-search.html" class="nav-link px-0 ms-5">品嚐美食</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Banner -->
+<div class="pt-2 pb-10 pt-md-20 pb-md-14">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 text-center text-md-start mb-9 mb-md-0">
+                <h1 class="fs-xl fw-light lh-base text-secondary text-md-start">探索<span
+                        class="border-bottom border-2 border-info">台灣之美</span><br>讓我們更親近這片土地</h1>
+                <p class="fs-sm fs-md-5">
+                    <i class="fas fa-map-marker-alt text-info"></i>
+                    台灣旅遊景點導覽<span class="fs-xs fs-md-6 fw-display ms-2">Taiwan Travel Guide</span>
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <form>
+                    <div class="mb-2">
+                        <select class="form-select bg-white py-3 px-8">
+                            <option value="spots" selected>探索景點</option>
+                            <option value="activity">節慶活動</option>
+                            <option value="restaruant">品嚐美食</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字">
+                    </div>
+                    <a href="spots-result.html" class="btn btn-primary text-white w-100 py-3">
+                        <i class="fa fa-search me-5"></i>搜尋
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Carousel 輪播圖-->
+<div class="container">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="spots.html">
+                    <img src="assets/images/banner-1.png" class="d-block w-100" alt="banner-1">
+                    <div class="carousel-caption">
+                        <h3 class="fs-6 fs-md-3">新北市 | 不厭亭</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="spots.html">
+                    <img src="assets/images/banner-2.png" class="d-block w-100" alt="banner-2">
+                    <div class="carousel-caption">
+                        <h3 class="fs-6 fs-md-3">宜蘭縣 | 羅東林業文化園區</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="activity.html">
+                    <img src="assets/images/banner-3.png" class="d-block w-100" alt="banner-3">
+                    <div class="carousel-caption">
+                        <h3 class="fs-6 fs-md-3">苗栗縣 | 2021 苗栗龍系列活動</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="restaurant.html">
+                    <img src="assets/images/banner-4.png" class="d-block w-100" alt="banner-4">
+                    <div class="carousel-caption">
+                        <h3 class="fs-6 fs-md-3">南投縣 | 金都餐廳</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Activity 活動 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">近期活動</h2>
+            <a href="activity-search.html" class="more text-danger">查看更多活動</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
+                    <div class="row g-0">
+                        <div class="col-3">
+                            <img src="assets/images/activity-1.png" class="w-100 h-100 object-cover" alt="activity-1">
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
+                                <div>
+                                    <span class="fs-xs fs-md-6">2021/10/30 - 2021/11/13</span>
+                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">2021 日月潭花火音樂嘉年華</h3>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
+                                        <span class="fs-xs fs-md-6">南投縣</span>
+                                    </div>
+                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
+                    <div class="row g-0">
+                        <div class="col-3">
+                            <img src="assets/images/activity-2.png" class="w-100 h-100 object-cover" alt="activity-2">
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
+                                <div>
+                                    <span class="fs-xs fs-md-6">2021/10/30 - 2021/11/13</span>
+                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">山城花語溫泉系列活動－寶來不...</h3>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
+                                        <span class="fs-xs fs-md-6">高雄市</span>
+                                    </div>
+                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
+                    <div class="row g-0">
+                        <div class="col-3">
+                            <img src="assets/images/activity-3.png" class="w-100 h-100 object-cover" alt="activity-3">
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
+                                <div>
+                                    <span class="fs-xs fs-md-6">2021/11/21 - 2021/11/21</span>
+                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">新北市萬金石馬拉松</h3>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
+                                        <span class="fs-xs fs-md-6">新北市</span>
+                                    </div>
+                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
+                    <div class="row g-0">
+                        <div class="col-3">
+                            <img src="assets/images/activity-4.png" class="w-100 h-100 object-cover" alt="activity-4">
+                        </div>
+                        <div class="col-9">
+                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
+                                <div>
+                                    <span class="fs-xs fs-md-6">2021/11/27 - 2021/11/28</span>
+                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">2021 金門坑道音樂節</h3>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
+                                        <span class="fs-xs fs-md-6">金門縣</span>
+                                    </div>
+                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Spots 景點 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">熱門打卡景點</h2>
+            <a href="spots-search.html" class="more text-danger">查看更多景點</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4" *ngFor="let spots of spotsList">
+                <div class="img-wrap">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                </div>
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City ? spots.City : '未提供縣市' }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  Restaurant 美食餐廳 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">一再回訪美食</h2>
+            <a href="restaurant-search.html" class="more text-danger">查看更多美食</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4">
+                <img src="assets/images/restaurant-1.png" class="w-100" alt="restaurant-1">
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">金都餐廳</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>南投縣
+            </div>
+            <div class="col mb-4">
+                <img src="assets/images/restaurant-2.png" class="w-100" alt="restaurant-2">
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">一中8兩碳烤雞排</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>臺中市
+            </div>
+            <div class="col mb-4">
+                <img src="assets/images/restaurant-3.png" class="w-100" alt="restaurant-3">
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">名根烤肉食材宅配外送</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>新北市
+            </div>
+            <div class="col mb-4">
+                <img src="assets/images/restaurant-4.png" class="w-100" alt="restaurant-4">
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">石桌羊肉店</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>嘉義縣
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer 頁尾 -->
+<footer class="fs-sm text-white text-center py-5">
+    <p>#The F2E 3rd Week01 #Breakfast</p>
+</footer>
