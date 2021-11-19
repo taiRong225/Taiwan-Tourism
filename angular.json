@@ -5,7 +5,23 @@
   "projects": {
     "Taiwan-Toursim": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,9 +40,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/all.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +138,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Taiwan-Toursim"
+    }
+  },
+  "defaultProject": "Taiwan-Toursim",
+  "cli": {
+    "analytics": "031800c5-4a92-4611-b872-dabe8197abb2"
+  }
 }
