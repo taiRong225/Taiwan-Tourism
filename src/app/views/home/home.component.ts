@@ -79,6 +79,7 @@ export class HomeComponent implements OnInit {
     this.spotsService.getSpotsList(options).subscribe(data => {
       this.spotsList = data.map(item => {
         item.City = item.City || environment.noProvideCity;
+        item.Picture.PictureUrl1 = item.Picture.PictureUrl1 || environment.noImage250x200;
         return item;
       });
     });
@@ -94,6 +95,7 @@ export class HomeComponent implements OnInit {
     this.restaurantService.getRestaurants(options).subscribe(data => {
       this.restaurants = data.map(item => {
         item.City = item.City || environment.noProvideCity;
+        item.Picture.PictureUrl1 = item.Picture.PictureUrl1 || environment.noImage250x200;
         return item;
       });
     });
