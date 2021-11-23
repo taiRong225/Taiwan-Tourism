@@ -1,5 +1,11 @@
 import { PointType, TourismPicture } from "./common.model";
 
+/**
+ * 觀光餐飲
+ *
+ * @export
+ * @interface Restaurant
+ */
 export interface Restaurant {
     /** 餐飲店家代碼 */
     ID?: string;

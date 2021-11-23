@@ -32,18 +32,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // 取得ｖ活動
+    // 取得活動列表
     this.getActivities();
 
-    // 取得景點
+    // 取得景點列表
     this.getSpotsList();
 
-    // 取得餐飲
+    // 取得餐飲列表
     this.getRestaurants();
   }
 
   /**
-   * 取得活動
+   * 取得活動列表
    *
    * @memberof HomeComponent
    */
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * 取得景點
+   * 取得景點列表
    *
    * @memberof HomeComponent
    */
@@ -85,6 +85,11 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * 取得餐飲列表
+   *
+   * @memberof HomeComponent
+   */
   getRestaurants() {
 
     /** 搜尋條件 */
