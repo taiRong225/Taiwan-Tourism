@@ -42,3 +42,18 @@ export interface Spots {
     /** 本平台資料更新時間 */
     UpdateTime?: string;
 }
+
+/**
+ * 觀光景點主題
+ *
+ * @export
+ * @interface SpotsTopic
+ */
+export interface SpotsTopic {
+    /** 主題名稱 */
+    name?: string;
+    /** 圖片路徑 */
+    path?: string;
+    /** 圖片說明 */
+    alt?: string;
+}

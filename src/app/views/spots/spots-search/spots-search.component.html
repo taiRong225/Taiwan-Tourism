@@ -1,0 +1,58 @@
+<!-- breadcrumb 麵包屑 -->
+<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item active" aria-current="page">探索景點</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- 搜尋表單 -->
+<div class="mb-6 mb-md-15">
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                    <select class="form-select py-3 px-8">
+                        <option value="all" selected>全部縣市</option>
+                        <option *ngFor="let city of cities" [value]="city.City">{{ city.CityName }}</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                    <select class="form-select py-3 px-8">
+                        <option value="all" selected>全部主題</option>
+                        <option *ngFor="let topic of topics" [value]="topic.name">{{ topic.name }}</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                    <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字">
+                </div>
+                <div class="col-12 col-md-2 mb-2 mb-md-0">
+                    <a href="spots-result.html" class="btn btn-primary text-white w-100 py-3">
+                        <i class="fa fa-search me-5"></i>搜尋
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Topic 熱門主題 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex align-items-end mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">熱門主題</h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4">
+            <div class="col position-relative mb-4" *ngFor="let topic  of topics">
+                <img [src]="topic.path" class="w-100" [alt]="topic.alt">
+                <h4 class="position-absolute top-50 start-50 translate-middle fs-6 fs-md-4 fw-bold text-white">{{
+                    topic.name }}
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
