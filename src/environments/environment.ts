@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseURLv2: 'https://ptx.transportdata.tw/MOTC/v2'
+  baseURLv2: 'https://ptx.transportdata.tw/MOTC/v2',
+  APP_ID: '3c27fa835a8c492eaa6d21b89d9ab351',
+  APP_KEY: 'YauXGr2vbJtXzRDgJcTr7A2rX6w'
 };
 
 /*
