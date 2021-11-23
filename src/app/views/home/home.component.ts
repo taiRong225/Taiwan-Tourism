@@ -45,7 +45,12 @@ export class HomeComponent implements OnInit {
       $top: 4
     }
 
-    this.spotsService.getSpotsList(options).subscribe(data => this.spotsList = data);
+    this.spotsService.getSpotsList(options).subscribe(data => {
+      this.spotsList = data.map(item => {
+        item.City = item.City || environment.noProvideCity;
+        return item;
+      });
+    });
   }
 
   getRestaurants() {
