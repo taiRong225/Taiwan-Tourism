@@ -130,94 +130,26 @@
             <a href="activity-search.html" class="more text-danger">查看更多活動</a>
         </div>
         <div class="row row-cols-1 row-cols-md-2">
-            <div class="col">
+            <div class="col" *ngFor="let activity of activities">
                 <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
                     <div class="row g-0">
                         <div class="col-3">
-                            <img src="assets/images/activity-1.png" class="w-100 h-100 object-cover" alt="activity-1">
+                            <img [src]="activity.Picture.PictureUrl1" class="w-100 h-100 object-cover"
+                                [alt]="activity.Picture.PictureDescription1">
                         </div>
                         <div class="col-9">
                             <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
                                 <div>
-                                    <span class="fs-xs fs-md-6">2021/10/30 - 2021/11/13</span>
-                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">2021 日月潭花火音樂嘉年華</h3>
+                                    <span class="fs-xs fs-md-6">
+                                        {{ activity.StartTime | date:'yyyy/MM/dd' }} -
+                                        {{ activity.EndTime | date:'yyyy/MM/dd' }}
+                                    </span>
+                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">{{ activity.Name }}</h3>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
-                                        <span class="fs-xs fs-md-6">南投縣</span>
-                                    </div>
-                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
-                    <div class="row g-0">
-                        <div class="col-3">
-                            <img src="assets/images/activity-2.png" class="w-100 h-100 object-cover" alt="activity-2">
-                        </div>
-                        <div class="col-9">
-                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
-                                <div>
-                                    <span class="fs-xs fs-md-6">2021/10/30 - 2021/11/13</span>
-                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">山城花語溫泉系列活動－寶來不...</h3>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
-                                        <span class="fs-xs fs-md-6">高雄市</span>
-                                    </div>
-                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
-                    <div class="row g-0">
-                        <div class="col-3">
-                            <img src="assets/images/activity-3.png" class="w-100 h-100 object-cover" alt="activity-3">
-                        </div>
-                        <div class="col-9">
-                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
-                                <div>
-                                    <span class="fs-xs fs-md-6">2021/11/21 - 2021/11/21</span>
-                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">新北市萬金石馬拉松</h3>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
-                                        <span class="fs-xs fs-md-6">新北市</span>
-                                    </div>
-                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
-                    <div class="row g-0">
-                        <div class="col-3">
-                            <img src="assets/images/activity-4.png" class="w-100 h-100 object-cover" alt="activity-4">
-                        </div>
-                        <div class="col-9">
-                            <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
-                                <div>
-                                    <span class="fs-xs fs-md-6">2021/11/27 - 2021/11/28</span>
-                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">2021 金門坑道音樂節</h3>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <i class="fas fa-map-marker-alt d-none d-md-inline"></i>
-                                        <span class="fs-xs fs-md-6">金門縣</span>
+                                        <i class="fas fa-map-marker-alt d-none d-md-inline me-1"></i>
+                                        <span class="fs-xs fs-md-6">{{ activity.City }}</span>
                                     </div>
                                     <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
                                 </div>
