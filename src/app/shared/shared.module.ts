@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 const components = [
   HeaderComponent,
   FooterComponent
+]
+
+const modules = [
+  CommonModule,
+  RouterModule
 ]
 
 @NgModule({
@@ -13,7 +19,7 @@ const components = [
     components
   ],
   imports: [
-    CommonModule
+    modules
   ],
   exports: [
     components
