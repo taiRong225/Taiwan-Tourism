@@ -13,27 +13,28 @@
 <!-- 搜尋表單 -->
 <div class="mb-6 mb-md-15">
     <div class="container">
-        <form>
+        <form [formGroup]="searchForm" (ngSubmit)="search()" novalidate>
             <div class="row">
                 <div class="col-12 col-md-3 mb-2 mb-md-0">
-                    <select class="form-select py-3 px-8">
+                    <select class="form-select py-3 px-8" formControlName="city">
                         <option value="all" selected>全部縣市</option>
                         <option *ngFor="let city of cities" [value]="city.City">{{ city.CityName }}</option>
                     </select>
                 </div>
                 <div class="col-12 col-md-3 mb-2 mb-md-0">
-                    <select class="form-select py-3 px-8">
+                    <select class="form-select py-3 px-8" formControlName="topic">
                         <option value="all" selected>全部主題</option>
                         <option *ngFor="let topic of topics" [value]="topic.name">{{ topic.name }}</option>
                     </select>
                 </div>
                 <div class="col-12 col-md-4 mb-2 mb-md-0">
-                    <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字">
+                    <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字"
+                        formControlName="keyword">
                 </div>
                 <div class="col-12 col-md-2 mb-2 mb-md-0">
-                    <a href="spots-result.html" class="btn btn-primary text-white w-100 py-3">
+                    <button type="submit" class="btn btn-primary text-white w-100 py-3">
                         <i class="fa fa-search me-5"></i>搜尋
-                    </a>
+                    </button>
                 </div>
             </div>
         </form>
@@ -41,18 +42,49 @@
 </div>
 
 <!-- Topic 熱門主題 -->
-<div class="mt-8">
+<div class="mt-8" *ngIf="isTopic">
     <div class="container">
         <div class="d-flex align-items-end mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">熱門主題</h2>
         </div>
         <div class="row row-cols-2 row-cols-md-4">
-            <div class="col position-relative mb-4" *ngFor="let topic  of topics">
+            <div class="col position-relative mb-4" *ngFor="let topic  of topics" (click)="changeTopic(topic.name)">
                 <img [src]="topic.path" class="w-100" [alt]="topic.alt">
                 <h4 class="position-absolute top-50 start-50 translate-middle fs-6 fs-md-4 fw-bold text-white">{{
                     topic.name }}
                 </h4>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- Spots 景點 -->
+<div class="mt-8" *ngIf="!isTopic">
+    <div class="container">
+        <div class="d-flex align-items-end mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">搜尋結果</h2>
+            <!-- <small class="fs-6">共有<span class="text-info"> 240 </span>筆</small> -->
+        </div>
+        <div class="row row-cols-1 row-cols-md-4" *ngIf="spotsList.length">
+            <div class="col mb-5 mb-md-9" *ngFor="let spots of spotsList">
+                <div class="img-wrap">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                </div>
+                <a href="spots.html">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City }}
+            </div>
+        </div>
+        <div class="text-center pt-12 pb-3" *ngIf="!spotsList.length">
+            <img src="assets/images/nofound80.png" alt="nofound80">
+            <p class="fs-5 fw-bold text-primary mt-3">目前查無資料<br>請重新搜尋</p>
+        </div>
+        <div class="text-center" *ngIf="spotsList.length && !isEnd">
+            <button type="button" class="btn btn-primary text-white w-50 py-3" (click)="loadMore()">加載更多</button>
+        </div>
+        <div class="text-center" *ngIf="spotsList.length && isEnd">
+            <p>- 到底了 -</p>
         </div>
     </div>
 </div>

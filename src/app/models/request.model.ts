@@ -5,6 +5,10 @@
  * @interface RequestBase
  */
 export interface RequestBase {
+    /** 每頁筆數 */
+    perPage?: number;
+    /** 頁碼 */
+    page?: number;
     /** 取最前筆數 */
     $top?: number;
     /** 跳過筆數 */

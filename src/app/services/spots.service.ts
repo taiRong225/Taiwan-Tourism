@@ -33,6 +33,23 @@ export class SpotsService {
   }
 
   /**
+   *
+   * 取得[縣市]景點
+   *
+   * @param {string} city 縣市
+   * @param {RequestBase} options 搜尋條件
+   * @return {*}  {Observable<Spots[]>}
+   * @memberof SpotsService
+   */
+  getCitySpotsList(city: string, options: RequestBase): Observable<Spots[]> {
+
+    /** httpParams */
+    const httpParams: HttpParams = new HttpParams({ fromObject: <any>options });
+
+    return this.http.get<Spots[]>(`${this.baseURL}/${city}?${httpParams.toString()}`);
+  }
+
+  /**
    * 取得景點主題
    *
    * @return {*}  {Observable<SpotsTopic[]>}
