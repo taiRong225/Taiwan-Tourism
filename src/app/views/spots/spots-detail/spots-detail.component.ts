@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Picture } from 'src/app/models/common.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Spots } from 'src/app/models/spots.model';
@@ -20,8 +20,12 @@ export class SpotsDetailComponent implements OnInit {
   /** 景點列表 */
   public spotsList: Spots[] = [];
 
+  /** 縣市 */
+  public city: string = '';
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private spotsService: SpotsService,
     private mapService: MapService
   ) { }
@@ -54,6 +58,7 @@ export class SpotsDetailComponent implements OnInit {
 
       /** 新的景點資料 */
       let newSpots: Spots[] = data.map(item => {
+        item.City = item.City || environment.noProvideCity;
         item.TravelInfo = item.TravelInfo || environment.emptyString;
         item.Address = item.Address || environment.emptyString;
         item.TicketInfo = item.TicketInfo || environment.emptyString;
@@ -128,7 +133,12 @@ export class SpotsDetailComponent implements OnInit {
 
       // 檢查縣市比對結果
       if (findCity) {
+
+        // 取得[縣市]景點
         this.getCitySpotsList(findCity.City);
+
+        // 更新縣市
+        this.city = findCity.City;
       }
     });
   }
@@ -160,5 +170,26 @@ export class SpotsDetailComponent implements OnInit {
 
       this.spotsList = newSpots;
     });
+  }
+
+  /**
+   * 導航到景點搜尋頁
+   *
+   * @memberof SpotsDetailComponent
+   */
+  navigateToSpotsSearch() {
+
+    // 檢查縣市
+    if (!this.city) return;
+
+    /** NavigationExtras */
+    let navigationExtras: NavigationExtras = {
+      state: {
+        city: this.city
+      }
+    }
+
+    // 頁面導向
+    this.router.navigate(['/spots/search'], navigationExtras);
   }
 }

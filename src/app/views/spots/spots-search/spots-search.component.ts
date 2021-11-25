@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { City } from 'src/app/models/map.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Spots, SpotsTopic } from 'src/app/models/spots.model';
@@ -40,9 +41,25 @@ export class SpotsSearchComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private mapService: MapService,
     private spotsService: SpotsService
-  ) { }
+  ) {
+
+    /** Navigation */
+    const navigation = this.router.getCurrentNavigation();
+
+    if (navigation.extras.state) {
+      const state = navigation.extras.state as {
+        city: string,
+      };
+
+      // 檢查縣市
+      if (state.city) {
+        setTimeout(() => this.changeCity(state.city), 100);
+      }
+    }
+  }
 
   ngOnInit(): void {
 
@@ -90,6 +107,23 @@ export class SpotsSearchComponent implements OnInit {
     // 更新表單
     this.searchForm.patchValue({
       topic: topic
+    });
+
+    // 搜尋
+    this.search();
+  }
+
+  /**
+   * 切換縣市
+   *
+   * @param {string} city 縣市
+   * @memberof SpotsSearchComponent
+   */
+  changeCity(city: string) {
+
+    // 更新表單
+    this.searchForm.patchValue({
+      city: city
     });
 
     // 搜尋
