@@ -13,16 +13,16 @@
             <div class="col-12 col-md-4">
                 <form>
                     <div class="mb-2">
-                        <select class="form-select bg-white py-3 px-8">
+                        <select class="form-select bg-white py-3 px-8" #tourismTypeSelect>
                             <option value="spots" selected>探索景點</option>
                             <option value="activity">節慶活動</option>
                             <option value="restaruant">品嚐美食</option>
                         </select>
                     </div>
                     <div class="mb-2">
-                        <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字">
+                        <input type="text" class="form-control py-3 px-8" placeholder="你想去哪裡？請輸入關鍵字" #keywordInput>
                     </div>
-                    <a href="spots-result.html" class="btn btn-primary text-white w-100 py-3">
+                    <a href="javascript:;" class="btn btn-primary text-white w-100 py-3" (click)="navigateToSearch()">
                         <i class="fa fa-search me-5"></i>搜尋
                     </a>
                 </form>

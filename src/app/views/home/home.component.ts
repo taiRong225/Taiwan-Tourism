@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { Activity } from 'src/app/models/activity.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Restaurant } from 'src/app/models/restaurant.model';
@@ -24,7 +25,14 @@ export class HomeComponent implements OnInit {
   /** 餐飲列表 */
   public restaurants: Restaurant[] = [];
 
+  /** 觀光類型 Select */
+  @ViewChild('tourismTypeSelect') tourismTypeSelect: ElementRef;
+
+  /** 關鍵字 Input */
+  @ViewChild('keywordInput') keywordInput: ElementRef;
+
   constructor(
+    private router: Router,
     private activityService: ActivityService,
     private spotsService: SpotsService,
     private restaurantService: RestaurantService
@@ -104,5 +112,34 @@ export class HomeComponent implements OnInit {
         return item;
       });
     });
+  }
+
+  /**
+   * 導航到搜尋頁
+   *
+   * @return {*}
+   * @memberof HomeComponent
+   */
+  navigateToSearch() {
+
+    /** 觀光類型 */
+    const tourismType: TourismType = this.tourismTypeSelect.nativeElement.value;
+
+    /** 關鍵字 */
+    const keyword: string = this.keywordInput.nativeElement.value;
+
+    /** NavigationExtras */
+    let navigationExtras: NavigationExtras = {
+      state: {
+        keyword: keyword
+      }
+    }
+
+    // 比對觀光類型
+    switch (tourismType) {
+      // 導向觀光景點
+      case 'spots':
+        this.router.navigate(['/spots/search'], navigationExtras); break;
+    }
   }
 }

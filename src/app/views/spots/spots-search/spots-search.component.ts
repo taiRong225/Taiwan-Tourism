@@ -56,11 +56,17 @@ export class SpotsSearchComponent implements OnInit {
     if (navigation.extras.state) {
       const state = navigation.extras.state as {
         city: string,
+        keyword: string
       };
 
       // 檢查縣市
       if (state.city) {
         setTimeout(() => this.changeCity(state.city), 100);
+      }
+
+      // 檢查關鍵字
+      if (state.keyword) {
+        setTimeout(() => this.changeKeyword(state.keyword), 100);
       }
     }
   }
@@ -131,6 +137,23 @@ export class SpotsSearchComponent implements OnInit {
     });
 
     // 搜尋
+    this.search();
+  }
+
+  /**
+   * 切換關鍵字
+   *
+   * @param {string} keyword 關鍵字
+   * @memberof SpotsSearchComponent
+   */
+  changeKeyword(keyword: string) {
+
+    // 更新表單
+    this.searchForm.patchValue({
+      keyword: keyword
+    });
+
+    // 搜尋條件
     this.search();
   }
 
