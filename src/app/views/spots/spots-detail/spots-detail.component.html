@@ -1,0 +1,120 @@
+<!-- breadcrumb 麵包屑 -->
+<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item"><a href="#">探索景點</a></li>
+                <li class="breadcrumb-item"><a href="#">{{ spots.City }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ spots.Name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Carousel 輪播圖-->
+<div class="container">
+    <carousel [isAnimated]="true">
+        <slide *ngFor="let picture of spots.Pictures">
+            <img [src]="picture.path" [alt]="picture.alt">
+        </slide>
+    </carousel>
+</div>
+
+<!-- 主內容 -->
+<div class="pt-7">
+    <div class="container">
+        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ spots.Name }}</h3>
+        <div class="mb-7">
+            <span class="badge border border-info rounded-pill text-info fs-sm fs-md-5 fw-normal me-2"
+                *ngFor="let class of spots.Classes"># {{ class }}</span>
+        </div>
+        <h4 class="fs-5 fw-bold">景點介紹：</h4>
+        <p class="text-justify">{{ spots.DescriptionDetail }}</p>
+        <div class="row row-cols-1 row-cols-md-2 py-7 py-md-15">
+            <div class="col bg-light bg-md-transparent">
+                <ul class="list-unstyled bg-light rounded-3 p-7 mb-0">
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">開放時間：</h4>
+                        <p>{{ spots.OpenTime }}</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">服務電話：</h4>
+                        <p>{{ spots.Phone }}</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">景點地址：</h4>
+                        <p>{{ spots.Address }}</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">官方網站：</h4>
+                        <p>
+                            <a [href]="spots.WebsiteUrl" target="_blank">{{ spots.WebsiteUrl }}</a>
+                        </p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">交通資訊：</h4>
+                        <p>{{ spots.TravelInfo }}</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">票價資訊：</h4>
+                        <p>{{ spots.TicketInfo }}</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fs-5 fw-bold">注意事項：</h4>
+                        <p>{{ spots.Remarks }}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col bg-light bg-md-transparent">
+                <iframe class="rounded-3" width="100%" height="250" frameborder="0"
+                    src="https://www.google.com/maps?q=宜蘭縣265羅東鎮中正北路118號&output=embed"></iframe>
+                <h4 class="fs-5 fw-bold mt-8 mb-5">周邊資訊：</h4>
+                <div class="row row-cols-1 row-cols-md-3 mb-7">
+                    <div class="col mb-2">
+                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6">
+                            <img src="assets/images/nearby-scene30.png" data-original="assets/images/nearby-scene30.png"
+                                data-change="assets/images/nearby-scene30-hover.png" alt="nearby-scene30">
+                            <p class="mt-1 fw-bold">附近景點</p>
+                        </a>
+                    </div>
+                    <div class="col mb-2">
+                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6">
+                            <img src="assets/images/nearby-event30.png" data-original="assets/images/nearby-event30.png"
+                                data-change="assets/images/nearby-event30-hover.png" alt="nearby-event30">
+                            <p class="mt-1 fw-bold">附近活動</p>
+                        </a>
+                    </div>
+                    <div class="col mb-2">
+                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6">
+                            <img src="assets/images/nearby-food30.png" data-original="assets/images/nearby-food30.png"
+                                data-change="assets/images/nearby-food30-hover.png" alt="nearby-food30">
+                            <p class="mt-1 fw-bold">附近美食</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Spots 景點 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">還有這些不能錯過</h2>
+            <a href="spots-result.html" class="more text-danger">查看更多{{ spots.City }}景點</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4" *ngFor="let spots of spotsList">
+                <div class="img-wrap">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                </div>
+                <a [routerLink]="['/spots', spots.ID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City}}
+            </div>
+        </div>
+    </div>
+</div>

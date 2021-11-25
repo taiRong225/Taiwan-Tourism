@@ -29,3 +29,15 @@ export interface PointType {
     /** 位置緯度 */
     PositionLat?: number;
 }
+
+/**
+ * 圖片
+ *
+ * @interface Picture
+ */
+export interface Picture {
+    /** 圖片路徑 */
+    path?: string;
+    /** 圖片說明 */
+    alt?: string;
+}
