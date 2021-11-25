@@ -210,4 +210,30 @@ export class SpotsDetailComponent implements OnInit {
   get googleMapUrl() {
     return `https://www.google.com/maps?q=${this.spots.Address}&output=embed`;
   }
+
+  /**
+   * 滑鼠滑入事件
+   *
+   * @param {MouseEvent} event 事件
+   * @memberof SpotsDetailComponent
+   */
+  mouseenter(event: MouseEvent) {
+    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
+    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
+    const change: string = imgTarget.dataset.change;
+    imgTarget.src = change;
+  }
+
+  /**
+   * 滑鼠滑出事件
+   *
+   * @param {MouseEvent} event 事件
+   * @memberof SpotsDetailComponent
+   */
+  mouseleave(event: MouseEvent) {
+    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
+    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
+    const original: string = imgTarget.dataset.original;
+    imgTarget.src = original;
+  }
 }
