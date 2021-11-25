@@ -157,7 +157,6 @@ export class SpotsSearchComponent implements OnInit {
 
     // 初始化
     this.requestBase.page = environment.page;
-    this.spotsList = [];
     this.isEnd = false;
 
     /** 縣市 */
@@ -188,6 +187,14 @@ export class SpotsSearchComponent implements OnInit {
 
     this.spotsService.getSpotsList(options).subscribe(data => {
 
+      // 檢查第一頁，初始化景點列表
+      if (this.requestBase.page === 0) {
+        this.spotsList = [];
+      }
+
+      // 檢查資料
+      if (!data.length) return this.isEnd = true;
+
       // 檢查是否到底了
       if (this.requestBase.page !== 0 && data.length === 0) {
         return this.isEnd = true;
@@ -217,6 +224,11 @@ export class SpotsSearchComponent implements OnInit {
     const options: RequestBase = this.getRequestQuery();
 
     this.spotsService.getCitySpotsList(city, options).subscribe(data => {
+
+      // 檢查第一頁，初始化景點列表
+      if (this.requestBase.page === 0) {
+        this.spotsList = [];
+      }
 
       // 檢查資料
       if (!data.length) return this.isEnd = true;
