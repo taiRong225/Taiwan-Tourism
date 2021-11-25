@@ -58,6 +58,7 @@ export class SpotsDetailComponent implements OnInit {
 
       /** 新的景點資料 */
       let newSpots: Spots[] = data.map(item => {
+        item.OpenTime = item.OpenTime || environment.emptyString;
         item.City = item.City || environment.noProvideCity;
         item.TravelInfo = item.TravelInfo || environment.emptyString;
         item.Address = item.Address || environment.emptyString;
