@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { City } from 'src/app/models/map.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Spots, SpotsTopic } from 'src/app/models/spots.model';
+import { fade } from 'src/app/packages/animations';
 import { MapService } from 'src/app/services/map.service';
 import { SpotsService } from 'src/app/services/spots.service';
 import { environment } from 'src/environments/environment';
@@ -11,7 +12,10 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-spots-search',
   templateUrl: './spots-search.component.html',
-  styleUrls: ['./spots-search.component.css']
+  styleUrls: ['./spots-search.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class SpotsSearchComponent implements OnInit {
 
