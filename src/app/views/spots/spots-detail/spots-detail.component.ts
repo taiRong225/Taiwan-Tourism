@@ -69,6 +69,7 @@ export class SpotsDetailComponent implements OnInit {
         item.City = item.City || environment.noProvideCity;
         item.TravelInfo = item.TravelInfo || environment.emptyString;
         item.Address = item.Address || environment.emptyString;
+        item.WebsiteUrl = item.WebsiteUrl || environment.emptyString;
         item.TicketInfo = item.TicketInfo || environment.emptyString;
         item.Remarks = item.Remarks || environment.emptyString;
         item.Classes = [];
