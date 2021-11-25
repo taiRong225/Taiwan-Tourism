@@ -23,6 +23,9 @@ export class SpotsDetailComponent implements OnInit {
   /** 縣市 */
   public city: string = '';
 
+  /** 提供地址 (Google Map) */
+  public hasAddress: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -58,6 +61,10 @@ export class SpotsDetailComponent implements OnInit {
 
       /** 新的景點資料 */
       let newSpots: Spots[] = data.map(item => {
+
+        // 檢查地址
+        if (item.Address) this.hasAddress = true;
+
         item.OpenTime = item.OpenTime || environment.emptyString;
         item.City = item.City || environment.noProvideCity;
         item.TravelInfo = item.TravelInfo || environment.emptyString;
@@ -192,5 +199,15 @@ export class SpotsDetailComponent implements OnInit {
 
     // 頁面導向
     this.router.navigate(['/spots/search'], navigationExtras);
+  }
+
+  /**
+   * 取得 Google Map URL
+   *
+   * @readonly
+   * @memberof SpotsDetailComponent
+   */
+  get googleMapUrl() {
+    return `https://www.google.com/maps?q=${this.spots.Address}&output=embed`;
   }
 }

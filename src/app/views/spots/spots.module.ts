@@ -6,6 +6,7 @@ import { SpotsSearchComponent } from './spots-search/spots-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpotsDetailComponent } from './spots-detail/spots-detail.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     SpotsRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    SharedModule
   ]
 })
 export class SpotsModule { }

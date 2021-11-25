@@ -3,10 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { SafePipe } from './pipes/safe.pipe';
 
 const components = [
   HeaderComponent,
   FooterComponent
+]
+
+const pipes = [
+  SafePipe
 ]
 
 const modules = [
@@ -16,13 +21,15 @@ const modules = [
 
 @NgModule({
   declarations: [
-    components
+    components,
+    pipes
   ],
   imports: [
     modules
   ],
   exports: [
-    components
+    components,
+    pipes
   ]
 })
 export class SharedModule { }
