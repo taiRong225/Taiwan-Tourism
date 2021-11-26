@@ -1,0 +1,39 @@
+<!-- breadcrumb 麵包屑 -->
+<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:;">首頁</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;">探索景點</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;">{{ spots.City }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ spots.Name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- 標題文字 -->
+<div class="d-flex flex-column align-items-center">
+    <span class="fs-5 fw-bold text-info">{{ spots.City }}</span>
+    <h3 class="fs-4 fs-md-lg fw-bold">{{ spots.Name }}</h3>
+</div>
+
+<!-- Spots 景點 -->
+<div class="mt-8">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">附近景點</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-4">
+            <div class="col mb-4" *ngFor="let spots of spotsList">
+                <div @fade class="img-wrap">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                </div>
+                <a href="javascipt:;" [routerLink]="['/spots', spots.ID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City }}
+            </div>
+        </div>
+    </div>
+</div>

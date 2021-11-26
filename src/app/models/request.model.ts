@@ -17,4 +17,6 @@ export interface RequestBase {
     $orderby?: string;
     /** 過濾 (回傳符合特定表達式的資料) */
     $filter?: string;
+    /** 空間過濾 (尋找附近點位資料) */
+    $spatialFilter?: string;
 }

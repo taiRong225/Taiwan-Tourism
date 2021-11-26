@@ -15,7 +15,8 @@ export const environment = {
   noImage345x160: './assets/images/NoImage-345x160.png',
   noImage1100x400: './assets/images/NoImage-1100x400.png',
   page: 0,
-  perPage: 4
+  perPage: 4,
+  distanceInMeters: 500
 };
 
 /*
