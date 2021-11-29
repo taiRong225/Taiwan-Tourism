@@ -167,7 +167,6 @@ export class SpotsDetailComponent implements OnInit {
       $skip: environment.page
     }
 
-    /** 搜尋條件 */
     this.spotsService.getCitySpotsList(city, options).subscribe(data => {
 
       /** 新的景點資料 */
