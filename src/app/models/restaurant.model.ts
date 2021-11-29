@@ -1,4 +1,4 @@
-import { PointType, TourismPicture } from "./common.model";
+import { Picture, PointType, TourismPicture } from "./common.model";
 
 /**
  * 觀光餐飲
@@ -23,6 +23,8 @@ export interface Restaurant {
     WebsiteUrl?: string;
     /** 圖片資料 */
     Picture?: TourismPicture;
+    /** 圖片陣列資料 */
+    Pictures?: Picture[];
     /** 經緯度 */
     Position?: PointType;
     /** 店家分類 */

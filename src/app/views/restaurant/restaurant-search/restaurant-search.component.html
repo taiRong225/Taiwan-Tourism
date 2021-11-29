@@ -73,7 +73,7 @@
                 <div @fade class="img-wrap">
                     <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1">
                 </div>
-                <a [routerLink]="['/spots', restaurant.ID]">
+                <a [routerLink]="['/restaurant', restaurant.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.Name }}</h3>
                 </a>
                 <i class="fas fa-map-marker-alt me-1"></i>{{ restaurant.City }}
