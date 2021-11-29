@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Activity } from 'src/app/models/activity.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Restaurant } from 'src/app/models/restaurant.model';
 import { Spots } from 'src/app/models/spots.model';
 import { fade } from 'src/app/packages/animations';
+import { ActivityService } from 'src/app/services/activity.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 import { SpotsService } from 'src/app/services/spots.service';
 import { environment } from 'src/environments/environment';
@@ -30,10 +32,14 @@ export class SpotsNearbyComponent implements OnInit {
   /** 餐飲列表 */
   public restaurants: Restaurant[] = [];
 
+  /** 活動列表 */
+  public activities: Activity[] = [];
+
   constructor(
     private route: ActivatedRoute,
     private spotsService: SpotsService,
-    private restaurantService: RestaurantService
+    private restaurantService: RestaurantService,
+    private activityService: ActivityService
   ) { }
 
   ngOnInit(): void {
@@ -68,6 +74,9 @@ export class SpotsNearbyComponent implements OnInit {
 
       // 取得附近餐飲
       this.getNearbyRestaurant(this.spots.Position.PositionLon, this.spots.Position.PositionLat);
+
+      // 取得附近活動
+      this.getNearbyActivity(this.spots.Position.PositionLon, this.spots.Position.PositionLat);
     });
   }
 
@@ -126,6 +135,35 @@ export class SpotsNearbyComponent implements OnInit {
 
       // 過濾掉自己
       this.restaurants = newRestaurant.filter(item => item.ID !== this.spots.ID);
+    });
+  }
+
+  /**
+   * 取得附近活動
+   *
+   * @param {number} PositionLon 經度
+   * @param {number} PositionLat 緯度
+   * @param {number} [DistanceInMeters=this.distanceInMeters] 範圍
+   * @memberof SpotsNearbyComponent
+   */
+  getNearbyActivity(PositionLon: number, PositionLat: number, DistanceInMeters: number = this.distanceInMeters) {
+
+    /** 搜尋條件 */
+    const options: RequestBase = {
+      $spatialFilter: `nearby(Position, ${PositionLat}, ${PositionLon}, ${DistanceInMeters})`
+    }
+
+    this.activityService.getActivities(options).subscribe(data => {
+
+      /** 新的活動資料 */
+      let newsActivity: Restaurant[] = data.map(item => {
+        item.City = item.City || environment.noProvideCity;
+        item.Picture.PictureUrl1 = item.Picture.PictureUrl1 || environment.noImage250x200
+        return item;
+      });
+
+      // 過濾掉自己
+      this.activities = newsActivity.filter(item => item.ID !== this.spots.ID);
     });
   }
 }
