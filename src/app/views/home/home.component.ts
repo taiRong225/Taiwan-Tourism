@@ -137,9 +137,14 @@ export class HomeComponent implements OnInit {
 
     // 比對觀光類型
     switch (tourismType) {
+
       // 導向觀光景點
       case 'spots':
         this.router.navigate(['/spots/search'], navigationExtras); break;
+
+      // 導向觀光餐飲
+      case 'restaurant':
+        this.router.navigate(['/restaurant/search'], navigationExtras); break;
     }
   }
 }

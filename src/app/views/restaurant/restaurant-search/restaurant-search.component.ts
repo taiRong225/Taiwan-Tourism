@@ -48,7 +48,28 @@ export class RestaurantSearchComponent implements OnInit {
     private router: Router,
     private mapService: MapService,
     private restaurantService: RestaurantService
-  ) { }
+  ) {
+
+    /** Navigation */
+    const navigation = this.router.getCurrentNavigation();
+
+    if (navigation.extras.state) {
+      const state = navigation.extras.state as {
+        city: string,
+        keyword: string
+      };
+
+      // 檢查縣市
+      if (state.city) {
+        setTimeout(() => this.changeCity(state.city), 100);
+      }
+
+      // 檢查關鍵字
+      if (state.keyword) {
+        setTimeout(() => this.changeKeyword(state.keyword), 100);
+      }
+    }
+  }
 
   ngOnInit(): void {
 
