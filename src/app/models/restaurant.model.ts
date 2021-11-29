@@ -34,3 +34,18 @@ export interface Restaurant {
     /** 本平台資料更新時間 */
     UpdateTime?: string;
 }
+
+/**
+ * 觀光餐飲主題
+ *
+ * @export
+ * @interface RestaurantTopic
+ */
+export interface RestaurantTopic {
+    /** 主題名稱 */
+    name?: string;
+    /** 圖片路徑 */
+    path?: string;
+    /** 圖片說明 */
+    alt?: string;
+}
