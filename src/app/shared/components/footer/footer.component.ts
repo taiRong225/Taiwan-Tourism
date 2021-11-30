@@ -11,9 +11,15 @@ import { fade } from 'src/app/packages/animations';
 })
 export class FooterComponent implements OnInit {
 
+  /** 載入中 */
+  public isLoading: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    // 延遲顯示
+    setTimeout(() => { this.isLoading = false }, 500);
   }
 
 }
