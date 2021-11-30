@@ -1,0 +1,98 @@
+<!-- breadcrumb 麵包屑 -->
+<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item active" aria-current="page">節慶活動</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- 搜尋表單 -->
+<div class="mb-6 mb-md-15">
+    <div class="container">
+        <form [formGroup]="searchForm" (ngSubmit)="search()" novalidate>
+            <div class="row">
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                    <select class="form-select py-3 px-8" formControlName="city">
+                        <option value="all" selected>全部縣市</option>
+                        <option *ngFor="let city of cities" [value]="city.City">{{ city.CityName }}</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                    <select class="form-select py-3 px-8" formControlName="topic">
+                        <option value="all" selected>全部主題</option>
+                        <option *ngFor="let topic of topics" [value]="topic.name">{{ topic.name }}</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                    <input type="text" class="form-control py-3 px-8" placeholder="想找有趣的？請輸入關鍵字"
+                        formControlName="keyword">
+                </div>
+                <div class="col-12 col-md-2 mb-2 mb-md-0">
+                    <button type="submit" class="btn btn-primary text-white w-100 py-3">
+                        <i class="fa fa-search me-5"></i>搜尋
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Topic 熱門主題 -->
+<div class="mt-8" *ngIf="isTopic">
+    <div class="container">
+        <div class="d-flex align-items-end mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">熱門主題</h2>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4">
+            <div class="col" *ngFor="let topic of topics" (click)="changeTopic(topic.name)">
+                <a href="javascript:;" class="d-block position-relative mb-4">
+                    <img [src]="topic.path" class="w-100" [alt]="topic.alt">
+                    <h4 class="position-absolute top-50 start-50 translate-middle fs-6 fs-md-4 fw-bold text-white">
+                        {{ topic.name }}
+                    </h4>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Activity 活動 -->
+<div class="mt-8" *ngIf="!isTopic">
+    <div class="container">
+        <div class="d-flex align-items-center mb-3">
+            <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">搜尋結果</h2>
+            <!-- <small class="fs-6">共有<span class="text-info"> 240 </span>筆</small> -->
+        </div>
+        <div class="row row-cols-1 row-cols-md-4" *ngIf="activities.length">
+            <div class="col mb-5 mb-md-9" *ngFor="let activity of activities">
+                <div @fade class="img-wrap">
+                    <img [src]="activity.Picture.PictureUrl1" [alt]="activity.Picture.PictureDescription1">
+                </div>
+                <a [routerLink]="['/activity', activity.ID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ activity.Name }}</h3>
+                </a>
+                <i class="fas fa-map-marker-alt me-1"></i>{{ activity.City }}
+            </div>
+        </div>
+
+        <!-- 無資料顯示 -->
+        <div @fade class="text-center pt-12 pb-3" *ngIf="!activities.length">
+            <img src="assets/images/nofound80.png" alt="nofound80">
+            <p class="fs-5 fw-bold text-primary mt-3">目前查無資料<br>請重新搜尋</p>
+        </div>
+
+        <!-- 加載更多 -->
+        <div class="text-center" *ngIf="activities.length && !isEnd">
+            <button type="button" class="btn btn-primary text-white w-50 py-3" (click)="loadMore()">加載更多</button>
+        </div>
+
+        <!-- 到底了顯示-->
+        <div class="text-center" *ngIf="activities.length && isEnd">
+            <p>- 到底了 -</p>
+        </div>
+    </div>
+</div>

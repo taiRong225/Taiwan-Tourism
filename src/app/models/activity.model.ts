@@ -48,3 +48,18 @@ export interface Activity {
     /** 本平台資料更新時間 */
     UpdateTime?: string;
 }
+
+/**
+ * 觀光活動主題
+ *
+ * @export
+ * @interface ActivityTopic
+ */
+export interface ActivityTopic {
+    /** 主題名稱 */
+    name?: string;
+    /** 圖片路徑 */
+    path?: string;
+    /** 圖片說明 */
+    alt?: string;
+}

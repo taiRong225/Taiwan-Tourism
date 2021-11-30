@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./views/home/home.module').then(m => m.HomeModule) },
   { path: '', loadChildren: () => import('./views/spots/spots.module').then(m => m.SpotsModule) },
   { path: '', loadChildren: () => import('./views/restaurant/restaurant.module').then(m => m.RestaurantModule) },
+  { path: '', loadChildren: () => import('./views/activity/activity.module').then(m => m.ActivityModule) },
   { path: '**', redirectTo: '/' }
 ];
 
