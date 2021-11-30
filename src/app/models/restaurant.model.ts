@@ -1,4 +1,4 @@
-import { Picture, PointType, TourismPicture } from "./common.model";
+import { Picture, PointType, TourismPicture, TourismTopic } from "./common.model";
 
 /**
  * 觀光餐飲
@@ -42,12 +42,6 @@ export interface Restaurant {
  *
  * @export
  * @interface RestaurantTopic
+ * @extends {TourismTopic}
  */
-export interface RestaurantTopic {
-    /** 主題名稱 */
-    name?: string;
-    /** 圖片路徑 */
-    path?: string;
-    /** 圖片說明 */
-    alt?: string;
-}
+export interface RestaurantTopic extends TourismTopic { }

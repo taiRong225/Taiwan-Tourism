@@ -41,3 +41,18 @@ export interface Picture {
     /** 圖片說明 */
     alt?: string;
 }
+
+/**
+ * 觀光主題
+ *
+ * @export
+ * @interface TourismTopic
+ */
+export interface TourismTopic {
+    /** 主題名稱 */
+    name?: string;
+    /** 圖片路徑 */
+    path?: string;
+    /** 圖片說明 */
+    alt?: string;
+}
