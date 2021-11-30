@@ -1,4 +1,4 @@
-import { PointType, TourismPicture } from "./common.model";
+import { Picture, PointType, TourismPicture } from "./common.model";
 
 /**
  * 觀光活動
@@ -31,12 +31,16 @@ export interface Activity {
     WebsiteUrl?: string;
     /** 圖片資料 */
     Picture?: TourismPicture;
+    /** 圖片陣列資料 */
+    Pictures?: Picture[];
     /** 經緯度 */
     Position?: PointType;
-    /** 景點分類1 */
+    /** 活動分類1 */
     Class1?: string;
-    /** 景點分類2 */
+    /** 活動分類2 */
     Class2?: string;
+    /** 活動分類陣列資料 */
+    Classes?: string[];
     /** 交通資訊 */
     TravelInfo?: string;
     /** 費用標示 */
