@@ -33,62 +33,27 @@
 
 <!-- Carousel 輪播圖-->
 <div class="container">
-    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="spots.html">
-                    <img src="assets/images/banner-1.png" class="d-block w-100" alt="banner-1">
-                    <div class="carousel-caption">
-                        <h3 class="fs-6 fs-md-3">新北市 | 不厭亭</h3>
-                    </div>
+    <carousel [isAnimated]="true">
+        <slide *ngFor="let carousel of carousels">
+            <img [src]="carousel.path" [alt]="carousel.alt" class="w-100">
+
+            <!-- 檢查觀光類型-->
+            <div class="carousel-caption" [ngSwitch]="carousel.tourismType">
+                <!-- 比對為景點 -->
+                <a *ngSwitchCase="'spots'" [routerLink]="['/spots', carousel.ID]" href="javascript:;">
+                    <h3 class="fs-6 fs-md-3 text-white">{{ carousel.subTitle }} | {{ carousel.title }}</h3>
+                </a>
+                <!-- 比對為餐飲 -->
+                <a *ngSwitchCase="'restaurant'" [routerLink]="['/restaurant', carousel.ID]" href="javascript:;">
+                    <h3 class="fs-6 fs-md-3 text-white">{{ carousel.subTitle }} | {{ carousel.title }}</h3>
+                </a>
+                <!-- 比對為活動 -->
+                <a *ngSwitchCase="'activity'" [routerLink]="['/activity', carousel.ID]" href="javascript:;">
+                    <h3 class="fs-6 fs-md-3 text-white">{{ carousel.subTitle }} | {{ carousel.title }}</h3>
                 </a>
             </div>
-            <div class="carousel-item">
-                <a href="spots.html">
-                    <img src="assets/images/banner-2.png" class="d-block w-100" alt="banner-2">
-                    <div class="carousel-caption">
-                        <h3 class="fs-6 fs-md-3">宜蘭縣 | 羅東林業文化園區</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="activity.html">
-                    <img src="assets/images/banner-3.png" class="d-block w-100" alt="banner-3">
-                    <div class="carousel-caption">
-                        <h3 class="fs-6 fs-md-3">苗栗縣 | 2021 苗栗龍系列活動</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="restaurant.html">
-                    <img src="assets/images/banner-4.png" class="d-block w-100" alt="banner-4">
-                    <div class="carousel-caption">
-                        <h3 class="fs-6 fs-md-3">南投縣 | 金都餐廳</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <button class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+        </slide>
+    </carousel>
 </div>
 
 <!-- Activity 活動 -->
