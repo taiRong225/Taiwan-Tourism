@@ -164,7 +164,8 @@ export class SpotsDetailComponent implements OnInit {
     /** 搜尋條件 */
     const options: RequestBase = {
       $top: environment.perPage,
-      $skip: environment.page
+      $skip: environment.page,
+      $filter: `ID ne '${this.spots.ID}'` // 過濾掉自己
     }
 
     this.spotsService.getCitySpotsList(city, options).subscribe(data => {
