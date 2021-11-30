@@ -1,5 +1,5 @@
 <!-- Banner -->
-<div class="pt-2 pb-10 pt-md-20 pb-md-14">
+<div @fade class="pt-2 pb-10 pt-md-20 pb-md-14">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 text-center text-md-start mb-9 mb-md-0">
@@ -31,8 +31,12 @@
     </div>
 </div>
 
+<!-- <div *ngIf="!carousels.length">
+    <img src="assets/images/NoImage-1100x400.png" class="opacity-0">
+</div> -->
+
 <!-- Carousel 輪播圖-->
-<div class="container">
+<div @fade class="container" *ngIf="carousels.length">
     <carousel [isAnimated]="true">
         <slide *ngFor="let carousel of carousels">
             <img [src]="carousel.path" [alt]="carousel.alt" class="w-100">
@@ -57,7 +61,7 @@
 </div>
 
 <!-- Activity 活動 -->
-<div class="mt-8">
+<div @fade class="mt-8" *ngIf="activities.length">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">近期活動</h2>
@@ -100,7 +104,7 @@
 </div>
 
 <!-- Spots 景點 -->
-<div class="mt-8">
+<div @fade class="mt-8" *ngIf="spotsList.length">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">熱門打卡景點</h2>
@@ -121,7 +125,7 @@
 </div>
 
 <!--  Restaurant 美食餐廳 -->
-<div class="mt-8">
+<div @fade class="mt-8" *ngIf="restaurants.length">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">一再回訪美食</h2>

@@ -5,6 +5,7 @@ import { Carousel } from 'src/app/models/carousel.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Restaurant } from 'src/app/models/restaurant.model';
 import { Spots } from 'src/app/models/spots.model';
+import { fade } from 'src/app/packages/animations';
 import { ActivityService } from 'src/app/services/activity.service';
 import { MapService } from 'src/app/services/map.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
@@ -15,7 +16,10 @@ import * as common from '../../packages/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class HomeComponent implements OnInit {
 
@@ -46,15 +50,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    // 取得活動列表
-    this.getActivities();
-
-    // 取得景點列表
-    this.getSpotsList();
-
-    // 取得餐飲列表
-    this.getRestaurants();
 
     // 取得縣市資料
     this.getCities();
@@ -140,6 +135,15 @@ export class HomeComponent implements OnInit {
 
       // 取得輪播列表
       this.getCarousels(city);
+
+      // 取得活動列表
+      this.getActivities();
+
+      // 取得景點列表
+      this.getSpotsList();
+
+      // 取得餐飲列表
+      this.getRestaurants();
     });
   }
 
