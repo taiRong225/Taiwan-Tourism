@@ -18,8 +18,7 @@
                 <div class="col-12 col-md-3 mb-2 mb-md-0">
                     <select class="form-select py-3 px-8" formControlName="city">
                         <option value="all" selected>全部縣市</option>
-                        <option value="taipei">臺北市</option>
-                        <option value="newtaipei">新北市</option>
+                        <option *ngFor="let city of cities" [value]="city.City">{{ city.CityName }}</option>
                     </select>
                 </div>
                 <div class="col-12 col-md-3 mb-2 mb-md-0">
