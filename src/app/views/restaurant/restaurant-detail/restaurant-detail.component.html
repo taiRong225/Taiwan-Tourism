@@ -16,7 +16,7 @@
 
 <!-- Carousel 輪播圖-->
 <div class="container">
-    <carousel [isAnimated]="true">
+    <carousel [isAnimated]="true" [(activeSlide)]="activeSlideIndex">
         <slide *ngFor="let picture of restaurant.Pictures">
             <img [src]="picture.path" [alt]="picture.alt">
         </slide>

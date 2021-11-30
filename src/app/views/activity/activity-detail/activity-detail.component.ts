@@ -26,6 +26,9 @@ export class ActivityDetailComponent implements OnInit {
   /** 提供地址 (Google Map) */
   public hasAddress: boolean = false;
 
+  /** 輪播當前索引 */
+  public activeSlideIndex: number = 0;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -118,6 +121,9 @@ export class ActivityDetailComponent implements OnInit {
       });
 
       this.activity = newActivity[0];
+
+      // 初始化輪播當前索引
+      this.activeSlideIndex = 0;
 
       // 檢查是否有提供縣市
       if (this.activity.City) {
