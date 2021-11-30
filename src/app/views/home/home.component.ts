@@ -145,6 +145,10 @@ export class HomeComponent implements OnInit {
       // 導向觀光餐飲
       case 'restaurant':
         this.router.navigate(['/restaurant/search'], navigationExtras); break;
+
+      // 導向觀光活動
+      case 'activity':
+        this.router.navigate(['/activity/search'], navigationExtras); break;
     }
   }
 }
