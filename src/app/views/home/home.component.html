@@ -96,7 +96,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">近期活動</h2>
-            <a href="activity-search.html" class="more text-danger">查看更多活動</a>
+            <a href="javascript:;" routerLink="/activity/search" class="more text-danger">查看更多活動</a>
         </div>
         <div class="row row-cols-1 row-cols-md-2">
             <div class="col" *ngFor="let activity of activities">
@@ -113,14 +113,17 @@
                                         {{ activity.StartTime | date:'yyyy/MM/dd' }} -
                                         {{ activity.EndTime | date:'yyyy/MM/dd' }}
                                     </span>
-                                    <h3 class="fs-6 fs-md-5 fw-bold mt-1">{{ activity.Name }}</h3>
+                                    <a [routerLink]="['/activity', activity.ID]">
+                                        <h3 class="fs-6 fs-md-5 fw-bold text-dark mt-1">{{ activity.Name }}</h3>
+                                    </a>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <i class="fas fa-map-marker-alt d-none d-md-inline me-1"></i>
                                         <span class="fs-xs fs-md-6">{{ activity.City }}</span>
                                     </div>
-                                    <a href="activity.html" class="more text-primary d-none d-md-block">詳細介紹</a>
+                                    <a href="javascript:;" routerLink="/activity/search"
+                                        class="more text-primary d-none d-md-block">詳細介紹</a>
                                 </div>
                             </div>
                         </div>
