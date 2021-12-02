@@ -1,0 +1,32 @@
+[
+    {
+        "name": "地方特產",
+        "path": "images/restaurant-category-1.png",
+        "alt": "restaurant-category-1"
+    },
+    {
+        "name": "中式美食",
+        "path": "images/restaurant-category-2.png",
+        "alt": "restaurant-category-2"
+    },
+    {
+        "name": "甜點冰品",
+        "path": "images/restaurant-category-3.png",
+        "alt": "restaurant-category-3"
+    },
+    {
+        "name": "異國料理",
+        "path": "images/restaurant-category-4.png",
+        "alt": "restaurant-category-4"
+    },
+    {
+        "name": "伴手禮",
+        "path": "images/restaurant-category-5.png",
+        "alt": "restaurant-category-5"
+    },
+    {
+        "name": "素食",
+        "path": "images/restaurant-category-6.png",
+        "alt": "restaurant-category-6"
+    }
+]

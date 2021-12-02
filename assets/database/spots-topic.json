@@ -1,0 +1,37 @@
+[
+    {
+        "name": "自然風景類",
+        "path": "images/spots-topic-1.png",
+        "alt": "spots-topic-1"
+    },
+    {
+        "name": "觀光工廠類",
+        "path": "images/spots-topic-2.png",
+        "alt": "spots-topic-2"
+    },
+    {
+        "name": "遊憩類",
+        "path": "images/spots-topic-3.png",
+        "alt": "spots-topic-3"
+    },
+    {
+        "name": "休閒農業類",
+        "path": "images/spots-topic-4.png",
+        "alt": "spots-topic-4"
+    },
+    {
+        "name": "生態類",
+        "path": "images/spots-topic-5.png",
+        "alt": "spots-topic-5"
+    },
+    {
+        "name": "溫泉類",
+        "path": "images/spots-topic-6.png",
+        "alt": "spots-topic-6"
+    },
+    {
+        "name": "古蹟類",
+        "path": "images/spots-topic-7.png",
+        "alt": "spots-topic-7"
+    }
+]
