@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SafePipe } from './pipes/safe.pipe';
+import { ImageDirective } from './directives/image.directive';
 
 const components = [
   HeaderComponent,
@@ -14,6 +15,10 @@ const pipes = [
   SafePipe
 ]
 
+const directives = [
+  ImageDirective
+]
+
 const modules = [
   CommonModule,
   RouterModule
@@ -22,14 +27,16 @@ const modules = [
 @NgModule({
   declarations: [
     components,
-    pipes
+    pipes,
+    directives
   ],
   imports: [
     modules
   ],
   exports: [
     components,
-    pipes
+    pipes,
+    directives
   ]
 })
 export class SharedModule { }

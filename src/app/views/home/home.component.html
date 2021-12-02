@@ -39,7 +39,8 @@
 <div @fade class="container" *ngIf="carousels.length">
     <carousel [isAnimated]="true">
         <slide *ngFor="let carousel of carousels">
-            <img [src]="carousel.path" [alt]="carousel.alt" class="w-100">
+            <img [src]="carousel.path" [alt]="carousel.alt" [placeholder]="'assets/images/NoImage-1100x400.png'"
+                appImage>
 
             <!-- 檢查觀光類型-->
             <div class="carousel-caption" [ngSwitch]="carousel.tourismType">
@@ -73,7 +74,8 @@
                     <div class="row g-0">
                         <div class="col-3">
                             <img [src]="activity.Picture.PictureUrl1" class="w-100 h-100 object-cover"
-                                [alt]="activity.Picture.PictureDescription1">
+                                [alt]="activity.Picture.PictureDescription1"
+                                [placeholder]="'assets/images/NoImage-160x160.png'" appImage>
                         </div>
                         <div class="col-9">
                             <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
@@ -113,7 +115,7 @@
         <div class="row row-cols-1 row-cols-md-4">
             <div class="col mb-4" *ngFor="let spots of spotsList">
                 <div class="img-wrap">
-                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1" appImage>
                 </div>
                 <a href="javascipt:;" [routerLink]="['/spots', spots.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
@@ -134,7 +136,7 @@
         <div class="row row-cols-1 row-cols-md-4">
             <div class="col mb-4" *ngFor="let restaurant of restaurants">
                 <div class="img-wrap">
-                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1">
+                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1" appImage>
                 </div>
                 <a href="spots.html">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.Name }}</h3>

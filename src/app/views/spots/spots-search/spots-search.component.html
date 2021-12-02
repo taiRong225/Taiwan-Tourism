@@ -70,7 +70,7 @@
         <div class="row row-cols-1 row-cols-md-4" *ngIf="spotsList.length">
             <div class="col mb-5 mb-md-9" *ngFor="let spots of spotsList">
                 <div @fade class="img-wrap">
-                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1">
+                    <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1" appImage>
                 </div>
                 <a [routerLink]="['/spots', spots.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>

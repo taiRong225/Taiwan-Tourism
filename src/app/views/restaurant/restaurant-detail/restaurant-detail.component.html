@@ -18,7 +18,7 @@
 <div class="container">
     <carousel [isAnimated]="true" [(activeSlide)]="activeSlideIndex">
         <slide *ngFor="let picture of restaurant.Pictures">
-            <img [src]="picture.path" [alt]="picture.alt">
+            <img [src]="picture.path" [alt]="picture.alt" [placeholder]="'assets/images/NoImage-1100x400.png'" appImage>
         </slide>
     </carousel>
 </div>
@@ -103,8 +103,8 @@
         </div>
         <div class="row row-cols-1 row-cols-md-4">
             <div class="col mb-4" *ngFor="let restaurant of restaurants">
-                <div class="img-wrap">
-                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1">
+                <div @fade class="img-wrap">
+                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1" appImage>
                 </div>
                 <a [routerLink]="['/restaurant', restaurant.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.Name }}</h3>

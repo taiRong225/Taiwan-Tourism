@@ -70,7 +70,7 @@
         <div class="row row-cols-1 row-cols-md-4" *ngIf="restaurants.length">
             <div class="col mb-5 mb-md-9" *ngFor="let restaurant of restaurants">
                 <div @fade class="img-wrap">
-                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1">
+                    <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1" appImage>
                 </div>
                 <a [routerLink]="['/restaurant', restaurant.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.Name }}</h3>
