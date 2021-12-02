@@ -159,8 +159,7 @@ export class RestaurantDetailComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $top: environment.perPage,
-      $skip: environment.page,
+      $top: 4,
       $filter: `ID ne '${this.restaurant.ID}'` // 過濾掉自己
     }
 
