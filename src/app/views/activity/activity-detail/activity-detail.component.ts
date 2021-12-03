@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Activity } from 'src/app/models/activity.model';
 import { Picture } from 'src/app/models/common.model';
 import { RequestBase } from 'src/app/models/request.model';
+import { fade } from 'src/app/packages/animations';
 import { ActivityService } from 'src/app/services/activity.service';
 import { MapService } from 'src/app/services/map.service';
 import { environment } from 'src/environments/environment';
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-activity-detail',
   templateUrl: './activity-detail.component.html',
-  styleUrls: ['./activity-detail.component.css']
+  styleUrls: ['./activity-detail.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class ActivityDetailComponent implements OnInit {
 

@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Picture } from 'src/app/models/common.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Restaurant } from 'src/app/models/restaurant.model';
+import { fade } from 'src/app/packages/animations';
 import { MapService } from 'src/app/services/map.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 import { environment } from 'src/environments/environment';
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-restaurant-detail',
   templateUrl: './restaurant-detail.component.html',
-  styleUrls: ['./restaurant-detail.component.css']
+  styleUrls: ['./restaurant-detail.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class RestaurantDetailComponent implements OnInit {
 

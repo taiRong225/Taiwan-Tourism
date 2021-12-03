@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Picture } from 'src/app/models/common.model';
 import { RequestBase } from 'src/app/models/request.model';
 import { Spots } from 'src/app/models/spots.model';
+import { fade } from 'src/app/packages/animations';
 import { MapService } from 'src/app/services/map.service';
 import { SpotsService } from 'src/app/services/spots.service';
 import { environment } from 'src/environments/environment';
@@ -10,7 +11,10 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-spots-detail',
   templateUrl: './spots-detail.component.html',
-  styleUrls: ['./spots-detail.component.css']
+  styleUrls: ['./spots-detail.component.css'],
+  animations: [
+    fade
+  ]
 })
 export class SpotsDetailComponent implements OnInit {
 
