@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
 
     // 延遲顯示
-    setTimeout(() => { this.isLoading = false }, 500);
+    setTimeout(() => { this.isLoading = false }, 1000);
   }
 
 }
