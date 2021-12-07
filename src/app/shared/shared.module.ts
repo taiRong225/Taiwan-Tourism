@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { SafePipe } from './pipes/safe.pipe';
 import { ImageDirective } from './directives/image.directive';
 import { NearbyListComponent } from './components/nearby-list/nearby-list.component';
+import { NearbyInfoComponent } from './components/nearby-info/nearby-info.component';
 
 const components = [
   HeaderComponent,
   FooterComponent,
-  NearbyListComponent
+  NearbyListComponent,
+  NearbyInfoComponent
 ]
 
 const pipes = [

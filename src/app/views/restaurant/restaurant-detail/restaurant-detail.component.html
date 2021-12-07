@@ -60,36 +60,10 @@
                 <iframe class="rounded-3" width="100%" height="250" frameborder="0"
                     [src]="googleMapUrl | safe: 'resourceUrl'" *ngIf="hasAddress">
                 </iframe>
-                <h4 class="fs-5 fw-bold mt-8 mb-5">周邊資訊：</h4>
-                <div class="row row-cols-1 row-cols-md-3 mb-7">
-                    <div class="col mb-2">
-                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
-                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
-                            [routerLink]="['/restaurant', restaurant.ID, 'nearby']" fragment="spots">
-                            <img src="assets/images/nearby-scene30.png" data-original="assets/images/nearby-scene30.png"
-                                data-change="assets/images/nearby-scene30-hover.png" alt="nearby-scene30">
-                            <p class="mt-1 fw-bold">附近景點</p>
-                        </a>
-                    </div>
-                    <div class="col mb-2">
-                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
-                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
-                            [routerLink]="['/restaurant', restaurant.ID, 'nearby']" fragment="activity">
-                            <img src="assets/images/nearby-event30.png" data-original="assets/images/nearby-event30.png"
-                                data-change="assets/images/nearby-event30-hover.png" alt="nearby-event30">
-                            <p class="mt-1 fw-bold">附近活動</p>
-                        </a>
-                    </div>
-                    <div class="col mb-2">
-                        <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
-                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
-                            [routerLink]="['/restaurant', restaurant.ID, 'nearby']" fragment="restaurant">
-                            <img src="assets/images/nearby-food30.png" data-original="assets/images/nearby-food30.png"
-                                data-change="assets/images/nearby-food30-hover.png" alt="nearby-food30">
-                            <p class="mt-1 fw-bold">附近美食</p>
-                        </a>
-                    </div>
-                </div>
+
+                <!-- 周邊資訊 -->
+                <app-nearby-info *ngIf="restaurant.ID" [ID]="restaurant.ID" [TourismType]="tourismType">
+                </app-nearby-info>
             </div>
         </div>
     </div>

@@ -33,6 +33,9 @@ export class ActivityDetailComponent implements OnInit {
   /** 輪播當前索引 */
   public activeSlideIndex: number = 0;
 
+  /** 觀光類型 */
+  public tourismType: TourismType = 'activity';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

@@ -33,6 +33,9 @@ export class RestaurantDetailComponent implements OnInit {
   /** 輪播當前索引 */
   public activeSlideIndex: number = 0;
 
+  /** 觀光類型 */
+  public tourismType: TourismType = 'restaurant';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -210,31 +213,5 @@ export class RestaurantDetailComponent implements OnInit {
    */
   get googleMapUrl() {
     return `https://www.google.com/maps?q=${this.restaurant.Address}&output=embed`;
-  }
-
-  /**
-   * 滑鼠滑入事件
-   *
-   * @param {MouseEvent} event 事件
-   * @memberof RestaurantDetailComponent
-   */
-  mouseenter(event: MouseEvent) {
-    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
-    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
-    const change: string = imgTarget.dataset.change;
-    imgTarget.src = change;
-  }
-
-  /**
-   * 滑鼠滑出事件
-   *
-   * @param {MouseEvent} event 事件
-   * @memberof RestaurantDetailComponent
-   */
-  mouseleave(event: MouseEvent) {
-    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
-    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
-    const original: string = imgTarget.dataset.original;
-    imgTarget.src = original;
   }
 }
