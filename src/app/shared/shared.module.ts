@@ -5,10 +5,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { SafePipe } from './pipes/safe.pipe';
 import { ImageDirective } from './directives/image.directive';
+import { NearbyListComponent } from './components/nearby-list/nearby-list.component';
 
 const components = [
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  NearbyListComponent
 ]
 
 const pipes = [
