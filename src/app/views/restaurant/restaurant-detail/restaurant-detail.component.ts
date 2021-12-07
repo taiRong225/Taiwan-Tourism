@@ -202,7 +202,7 @@ export class RestaurantDetailComponent implements OnInit {
     }
 
     // 頁面導向
-    this.router.navigate(['/spots/search'], navigationExtras);
+    this.router.navigate(['/restaurant/search'], navigationExtras);
   }
 
   /**
