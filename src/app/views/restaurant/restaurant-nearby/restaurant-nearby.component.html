@@ -1,0 +1,23 @@
+<!-- breadcrumb 麵包屑 -->
+<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:;">首頁</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;">品嚐美食</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;">{{ restaurant.City }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ restaurant.Name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- 標題文字 -->
+<div class="d-flex flex-column align-items-center">
+    <span class="fs-5 fw-bold text-info">{{ restaurant.City }}</span>
+    <h3 class="fs-4 fs-md-lg fw-bold">{{ restaurant.Name }}</h3>
+</div>
+
+<!-- 附近點的列表 -->
+<app-nearby-list *ngIf="restaurant.ID" [ID]="restaurant.ID" [TourismType]="tourismType"
+    [PositionLon]="restaurant.Position.PositionLon" [PositionLat]="restaurant.Position.PositionLat"></app-nearby-list>

@@ -7,10 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RestaurantNearbyComponent } from './restaurant-nearby/restaurant-nearby.component';
 
 
 @NgModule({
-  declarations: [RestaurantSearchComponent, RestaurantDetailComponent],
+  declarations: [RestaurantSearchComponent, RestaurantDetailComponent, RestaurantNearbyComponent],
   imports: [
     CommonModule,
     RestaurantRoutingModule,
