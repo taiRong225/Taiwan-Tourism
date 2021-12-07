@@ -76,7 +76,7 @@
                     <div class="col mb-2">
                         <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
                             (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
-                            [routerLink]="['/spots', spots.ID, 'nearby']">
+                            [routerLink]="['/spots', spots.ID, 'nearby']" fragment="spots">
                             <img src="assets/images/nearby-scene30.png" data-original="assets/images/nearby-scene30.png"
                                 data-change="assets/images/nearby-scene30-hover.png" alt="nearby-scene30">
                             <p class="mt-1 fw-bold">附近景點</p>
@@ -84,7 +84,8 @@
                     </div>
                     <div class="col mb-2">
                         <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
-                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)">
+                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
+                            [routerLink]="['/spots', spots.ID, 'nearby']" fragment="activity">
                             <img src="assets/images/nearby-event30.png" data-original="assets/images/nearby-event30.png"
                                 data-change="assets/images/nearby-event30-hover.png" alt="nearby-event30">
                             <p class="mt-1 fw-bold">附近活動</p>
@@ -92,7 +93,8 @@
                     </div>
                     <div class="col mb-2">
                         <a href="#" class="nearby-item d-block border rounded-3 text-center py-3 py-md-6"
-                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)">
+                            (mouseenter)="mouseenter($event)" (mouseleave)="mouseleave($event)"
+                            [routerLink]="['/spots', spots.ID, 'nearby']" fragment="restaurant">
                             <img src="assets/images/nearby-food30.png" data-original="assets/images/nearby-food30.png"
                                 data-change="assets/images/nearby-food30-hover.png" alt="nearby-food30">
                             <p class="mt-1 fw-bold">附近美食</p>

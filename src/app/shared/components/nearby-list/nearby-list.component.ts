@@ -8,6 +8,7 @@ import { ActivityService } from 'src/app/services/activity.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 import { SpotsService } from 'src/app/services/spots.service';
 import { environment } from 'src/environments/environment';
+import * as common from '../../../packages/common';
 
 @Component({
   selector: 'app-nearby-list',
@@ -59,6 +60,13 @@ export class NearbyListComponent implements OnInit {
 
     // 取得附近活動
     this.getNearbyActivity(this.PositionLon, this.PositionLat);
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const element: HTMLElement = document.querySelector(window.location.hash);
+      common.scrollToElement(element);
+    }, 1000);
   }
 
   /**
