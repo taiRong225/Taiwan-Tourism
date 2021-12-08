@@ -58,7 +58,7 @@
                 </a>
             </div>
         </slide>
-        <div class="carousel-indicators">
+        <div class="carousel-indicators" *ngIf="carousels.length > 1">
             <button *ngFor="let carousel of carousels; let i = index" type="button"
                 data-bs-target="#carouselExampleCaptions" [class.active]="i === activeSlideIndex"
                 (click)="switchSlide(i)">
