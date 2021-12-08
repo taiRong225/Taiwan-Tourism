@@ -35,6 +35,9 @@ export class HomeComponent implements OnInit {
   /** 輪播列表 */
   public carousels: Carousel[] = [];
 
+  /** 輪播當前索引 */
+  public activeSlideIndex: number = 0;
+
   /** 觀光類型 Select */
   @ViewChild('tourismTypeSelect') tourismTypeSelect: ElementRef;
 
@@ -258,5 +261,17 @@ export class HomeComponent implements OnInit {
       case 'activity':
         this.router.navigate(['/activity/search'], navigationExtras); break;
     }
+  }
+
+  /**
+   * 切換輪播
+   *
+   * @param {number} index 輪播索引
+   * @memberof HomeComponent
+   */
+  switchSlide(index: number) {
+    console.log(index);
+
+    this.activeSlideIndex = index;
   }
 }

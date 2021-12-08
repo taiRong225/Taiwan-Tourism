@@ -211,4 +211,14 @@ export class ActivityDetailComponent implements OnInit {
     // 頁面導向
     this.router.navigate(['/activity/search'], navigationExtras);
   }
+
+  /**
+   * 切換輪播
+   *
+   * @param {number} index 輪播索引
+   * @memberof ActivityDetailComponent
+   */
+  switchSlide(index: number) {
+    this.activeSlideIndex = index;
+  }
 }

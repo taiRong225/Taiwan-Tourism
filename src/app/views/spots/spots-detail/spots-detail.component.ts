@@ -213,4 +213,14 @@ export class SpotsDetailComponent implements OnInit {
     // 頁面導向
     this.router.navigate(['/spots/search'], navigationExtras);
   }
+
+  /**
+   * 切換輪播
+   *
+   * @param {number} index 輪播索引
+   * @memberof SpotsDetailComponent
+   */
+  switchSlide(index: number) {
+    this.activeSlideIndex = index;
+  }
 }
