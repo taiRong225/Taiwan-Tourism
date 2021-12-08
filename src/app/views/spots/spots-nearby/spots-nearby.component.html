@@ -3,9 +3,10 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:;">首頁</a></li>
-                <li class="breadcrumb-item"><a href="javascript:;">探索景點</a></li>
-                <li class="breadcrumb-item"><a href="javascript:;">{{ spots.City }}</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;" routerLink="/">首頁</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;" routerLink="/spots/search">探索景點</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToSpotsSearch()">{{ spots.City
+                        }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ spots.Name }}</li>
             </ol>
         </nav>
