@@ -15,7 +15,7 @@
 </div>
 
 <!-- Carousel 輪播圖-->
-<div @fade class="container" *ngIf="restaurant.Pictures.length">
+<div @fade class="container" *ngIf="restaurant.Pictures?.length">
     <carousel [isAnimated]="true" [(activeSlide)]="activeSlideIndex">
         <slide *ngFor="let picture of restaurant.Pictures">
             <img [src]="picture.path" [alt]="picture.alt" [placeholder]="'assets/images/NoImage-1100x400.png'" appImage>
