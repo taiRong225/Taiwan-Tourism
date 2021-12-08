@@ -211,30 +211,4 @@ export class ActivityDetailComponent implements OnInit {
     // 頁面導向
     this.router.navigate(['/activity/search'], navigationExtras);
   }
-
-  /**
-   * 滑鼠滑入事件
-   *
-   * @param {MouseEvent} event 事件
-   * @memberof ActivityDetailComponent
-   */
-  mouseenter(event: MouseEvent) {
-    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
-    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
-    const change: string = imgTarget.dataset.change;
-    imgTarget.src = change;
-  }
-
-  /**
-   * 滑鼠滑出事件
-   *
-   * @param {MouseEvent} event 事件
-   * @memberof ActivityDetailComponent
-   */
-  mouseleave(event: MouseEvent) {
-    const eventTarget: HTMLLinkElement = <HTMLLinkElement>event.target;
-    const imgTarget: HTMLImageElement = <HTMLImageElement>eventTarget.childNodes[0];
-    const original: string = imgTarget.dataset.original;
-    imgTarget.src = original;
-  }
 }
