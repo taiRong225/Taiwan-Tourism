@@ -1,5 +1,5 @@
 <!-- breadcrumb 麵包屑 -->
-<div class="pt-6 pb-4 pt-md-14 pb-md-7">
+<div @fade class="pt-6 pb-4 pt-md-14 pb-md-7">
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -15,7 +15,7 @@
 </div>
 
 <!-- Carousel 輪播圖-->
-<div class="container">
+<div @fade class="container" *ngIf="restaurant.Pictures.length">
     <carousel [isAnimated]="true" [(activeSlide)]="activeSlideIndex">
         <slide *ngFor="let picture of restaurant.Pictures">
             <img [src]="picture.path" [alt]="picture.alt" [placeholder]="'assets/images/NoImage-1100x400.png'" appImage>
@@ -30,7 +30,7 @@
 </div>
 
 <!-- 主內容 -->
-<div class="pt-7">
+<div @fade class="pt-7" *ngIf="restaurant.ID">
     <div class="container">
         <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ restaurant.Name }}</h3>
         <div class="mb-7">
@@ -76,7 +76,7 @@
 </div>
 
 <!-- Restaurant 餐飲 -->
-<div class="mt-8" *ngIf="city">
+<div @fade class="mt-8" *ngIf="city">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0">還有這些不能錯過</h2>
