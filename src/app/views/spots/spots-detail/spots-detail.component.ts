@@ -213,14 +213,4 @@ export class SpotsDetailComponent implements OnInit {
     // 頁面導向
     this.router.navigate(['/spots/search'], navigationExtras);
   }
-
-  /**
-   * 取得 Google Map URL
-   *
-   * @readonly
-   * @memberof SpotsDetailComponent
-   */
-  get googleMapUrl() {
-    return `https://www.google.com/maps?q=${this.spots.Address}&output=embed`;
-  }
 }

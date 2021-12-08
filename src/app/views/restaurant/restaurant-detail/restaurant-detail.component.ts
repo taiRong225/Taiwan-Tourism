@@ -204,14 +204,4 @@ export class RestaurantDetailComponent implements OnInit {
     // 頁面導向
     this.router.navigate(['/restaurant/search'], navigationExtras);
   }
-
-  /**
-   * 取得 Google Map URL
-   *
-   * @readonly
-   * @memberof RestaurantDetailComponent
-   */
-  get googleMapUrl() {
-    return `https://www.google.com/maps?q=${this.restaurant.Address}&output=embed`;
-  }
 }

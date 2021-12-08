@@ -213,16 +213,6 @@ export class ActivityDetailComponent implements OnInit {
   }
 
   /**
-   * 取得 Google Map URL
-   *
-   * @readonly
-   * @memberof ActivityDetailComponent
-   */
-  get googleMapUrl() {
-    return `https://www.google.com/maps?q=${this.activity.Address}&output=embed`;
-  }
-
-  /**
    * 滑鼠滑入事件
    *
    * @param {MouseEvent} event 事件

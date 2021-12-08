@@ -7,12 +7,14 @@ import { SafePipe } from './pipes/safe.pipe';
 import { ImageDirective } from './directives/image.directive';
 import { NearbyListComponent } from './components/nearby-list/nearby-list.component';
 import { NearbyInfoComponent } from './components/nearby-info/nearby-info.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 const components = [
   HeaderComponent,
   FooterComponent,
   NearbyListComponent,
-  NearbyInfoComponent
+  NearbyInfoComponent,
+  GoogleMapComponent
 ]
 
 const pipes = [

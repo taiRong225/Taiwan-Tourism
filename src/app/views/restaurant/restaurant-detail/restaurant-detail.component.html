@@ -57,9 +57,9 @@
                 </ul>
             </div>
             <div class="col bg-light bg-md-transparent">
-                <iframe class="rounded-3" width="100%" height="250" frameborder="0"
-                    [src]="googleMapUrl | safe: 'resourceUrl'" *ngIf="hasAddress">
-                </iframe>
+
+                <!-- Google Map -->
+                <app-google-map *ngIf="hasAddress" [address]="restaurant.Address"></app-google-map>
 
                 <!-- 周邊資訊 -->
                 <app-nearby-info *ngIf="restaurant.ID" [ID]="restaurant.ID" [TourismType]="tourismType">
