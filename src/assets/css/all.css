@@ -16935,6 +16935,41 @@ fieldset:disabled .btn {
   border-radius: 20px;
 }
 
+.img-sm-wrap {
+  width: 100%;
+  height: 160px;
+}
+
+@media (max-width: 767px) {
+  .img-sm-wrap {
+    height: 80px;
+  }
+}
+
+.img-sm-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.card-item {
+  border-radius: 12px;
+}
+
+.card-item img {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .card-item img {
+    border-radius: 12px;
+  }
+}
+
 footer {
   background-color: #65895F;
   margin-top: 120px;
@@ -16952,20 +16987,5 @@ footer {
   content: "\f105";
   font-size: 16px;
   margin-left: 8px;
-}
-
-.card-item {
-  border-radius: 12px;
-}
-
-.card-item img {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-@media (max-width: 767px) {
-  .card-item img {
-    border-radius: 12px;
-  }
 }
 /*# sourceMappingURL=all.css.map */

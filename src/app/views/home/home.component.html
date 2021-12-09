@@ -79,9 +79,10 @@
                 <div class="card-item border-0 border-md bg-transparent bg-md-light mb-4 mb-md-3">
                     <div class="row g-0">
                         <div class="col-3">
-                            <img [src]="activity.Picture.PictureUrl1" class="w-100 h-100 object-cover"
-                                [alt]="activity.Picture.PictureDescription1"
-                                [placeholder]="'assets/images/NoImage-160x160.png'" appImage>
+                            <div class="img-sm-wrap">
+                                <img [src]="activity.Picture.PictureUrl1" [alt]="activity.Picture.PictureDescription1"
+                                    [placeholder]="'assets/images/NoImage-160x160.png'" appImage>
+                            </div>
                         </div>
                         <div class="col-9">
                             <div class="d-flex flex-column justify-content-md-between h-100 ps-4 p-md-4">
@@ -91,7 +92,7 @@
                                         {{ activity.EndTime | date:'yyyy/MM/dd' }}
                                     </span>
                                     <a [routerLink]="['/activity', activity.ID]">
-                                        <h3 class="fs-6 fs-md-5 fw-bold text-dark mt-1">{{ activity.Name }}</h3>
+                                        <h3 class="fs-sm fs-md-5 fw-bold text-dark mt-1">{{ activity.Name }}</h3>
                                     </a>
                                 </div>
                                 <div class="d-flex justify-content-between">
