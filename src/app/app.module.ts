@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    NgxScrollTopModule
   ],
   providers: [
     {

@@ -16,3 +16,8 @@ slide > .item > img {
         height: 185px;
     }
 }
+
+/** ngx-scrolltop */
+.scrolltop-button {
+    margin-bottom: 60px;
+}
