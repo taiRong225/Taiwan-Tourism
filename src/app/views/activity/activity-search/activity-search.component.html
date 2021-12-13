@@ -15,19 +15,22 @@
     <div class="container">
         <form [formGroup]="searchForm" (ngSubmit)="search()" novalidate>
             <div class="row">
-                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                <div class="col-12 col-md-2 mb-2 mb-md-0">
                     <select class="form-select py-3 px-8" formControlName="city">
                         <option value="all" selected>全部縣市</option>
                         <option *ngFor="let city of cities" [value]="city.City">{{ city.CityName }}</option>
                     </select>
                 </div>
-                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                <div class="col-12 col-md-2 mb-2 mb-md-0">
                     <select class="form-select py-3 px-8" formControlName="topic">
                         <option value="all" selected>全部主題</option>
                         <option *ngFor="let topic of topics" [value]="topic.name">{{ topic.name }}</option>
                     </select>
                 </div>
-                <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
+                    <input type="date" class="form-control text-primary py-3 px-8" formControlName="date">
+                </div>
+                <div class="col-12 col-md-3 mb-2 mb-md-0">
                     <input type="text" class="form-control py-3 px-8" placeholder="想找有趣的？請輸入關鍵字"
                         formControlName="keyword">
                 </div>
@@ -72,6 +75,10 @@
                 <div @fade class="img-wrap">
                     <img [src]="activity.Picture.PictureUrl1" [alt]="activity.Picture.PictureDescription1" appImage>
                 </div>
+                <span class="fs-sm fs-md-6">
+                    {{ activity.StartTime | date:'yyyy/MM/dd' }} -
+                    {{ activity.EndTime | date:'yyyy/MM/dd' }}
+                </span>
                 <a [routerLink]="['/activity', activity.ID]">
                     <h3 class="fs-5 fw-bold text-dark mt-2">{{ activity.Name }}</h3>
                 </a>

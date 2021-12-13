@@ -166,6 +166,7 @@ export class ActivitySearchComponent implements OnInit {
     this.searchForm = this.fb.group({
       city: ['all'],
       topic: ['all'],
+      date: [''],
       keyword: ['']
     });
   }
@@ -320,23 +321,32 @@ export class ActivitySearchComponent implements OnInit {
     /** 關鍵字 */
     const keyword: string = this.searchForm.get('keyword').value;
 
-    // 主題 and 關鍵字
-    if (topic !== 'all' && keyword) {
+    /** 日期 */
+    const date: string = this.searchForm.get('date').value;
 
-      options.$filter = `((contains(Class1, '${topic}') or contains(Class2, '${topic}')) and (contains(Name, '${keyword}') or contains(Address, '${keyword}') or contains(Description, '${keyword}')))`;
+    /** 篩選條件 */
+    const filter: string[] = [];
 
-    } else {
-
-      // only 主題
-      if (topic !== 'all') {
-        options.$filter = `(contains(Class1, '${topic}') or contains(Class2, '${topic}'))`;
-      }
-
-      // only 關鍵字
-      if (keyword) {
-        options.$filter = `(contains(Name, '${keyword}') or contains(Address, '${keyword}') or contains(Description, '${keyword}'))`;
-      }
+    // 檢查主題
+    if (topic !== 'all') {
+      filter.push(`(contains(Class1, '${topic}') or contains(Class2, '${topic}'))`);
     }
+
+    // 檢查關鍵字
+    if (keyword) {
+      filter.push(`(contains(Name, '${keyword}') or contains(Address, '${keyword}') or contains(Description, '${keyword}'))`)
+    }
+
+    // 檢查日期
+    if (date) {
+      filter.push(`(EndTime ge ${date})`);
+      options.$orderby = `EndTime asc`;
+    }
+
+    // 檢查資料，加上篩選條件
+    if (filter.length) {
+      options.$filter = filter.join('and');
+    };
 
     return options;
   }
