@@ -75,6 +75,7 @@ export class RestaurantDetailComponent implements OnInit {
         // 檢查地址
         if (item.Address) this.hasAddress = true;
 
+        item.City = item.City || environment.noProvideCity;
         item.OpenTime = item.OpenTime || environment.emptyString;
         item.Address = item.Address || environment.emptyString;
         item.WebsiteUrl = item.WebsiteUrl || environment.emptyString;
