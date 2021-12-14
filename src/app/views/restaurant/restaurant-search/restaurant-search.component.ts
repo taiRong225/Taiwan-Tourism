@@ -31,6 +31,9 @@ export class RestaurantSearchComponent implements OnInit {
   /** 餐飲主題 */
   public topics: RestaurantTopic[] = [];
 
+  /** 熱門餐飲主題 */
+  public popularTopics: RestaurantTopic[] = [];
+
   /** 是主題 */
   public isTopic: boolean = true;
 
@@ -99,10 +102,12 @@ export class RestaurantSearchComponent implements OnInit {
    */
   getRestaurantTopic() {
     this.restaurantService.getRestaurantTopic().subscribe(data => {
-      this.topics = data.map(item => {
-        item.path = `assets/${item.path}`;
-        return item;
-      });
+
+      // 篩選出熱門主題
+      this.popularTopics = data.filter(item => item.isPopular);
+
+      // 全部主題
+      this.topics = data;
     });
   }
 

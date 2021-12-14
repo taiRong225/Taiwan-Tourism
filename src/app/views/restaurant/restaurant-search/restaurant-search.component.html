@@ -48,7 +48,7 @@
             <h2 class="fs-4 fs-md-lg fw-light text-secondary mb-0 me-2">熱門分類</h2>
         </div>
         <div class="row row-cols-2 row-cols-md-4">
-            <div class="col" *ngFor="let topic of topics">
+            <div class="col" *ngFor="let topic of popularTopics">
                 <a href="javascript:;" class="d-block position-relative mb-4" (click)="changeTopic(topic.name)">
                     <img @fade [src]="topic.path" class="w-100" [alt]="topic.alt">
                     <h4 class="position-absolute top-50 start-50 translate-middle fs-6 fs-md-4 fw-bold text-white">
