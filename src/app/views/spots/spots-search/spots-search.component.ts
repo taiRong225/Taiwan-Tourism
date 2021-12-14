@@ -31,6 +31,9 @@ export class SpotsSearchComponent implements OnInit {
   /** 景點主題 */
   public topics: SpotsTopic[] = [];
 
+  /** 熱門景點主題 */
+  public popularTopics: SpotsTopic[] = [];
+
   /** 是主題 */
   public isTopic: boolean = true;
 
@@ -99,10 +102,12 @@ export class SpotsSearchComponent implements OnInit {
    */
   getSpotsTopic() {
     this.spotsService.getSpotsTopic().subscribe(data => {
-      this.topics = data.map(item => {
-        item.path = `assets/${item.path}`;
-        return item;
-      });
+
+      // 篩選出熱門主題
+      this.popularTopics = data.filter(item => item.isPopular);
+
+      // 全部主題
+      this.topics = data;
     });
   }
 

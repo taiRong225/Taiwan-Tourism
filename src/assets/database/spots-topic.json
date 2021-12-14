@@ -1,37 +1,110 @@
 [
     {
         "name": "自然風景類",
-        "path": "images/spots-topic-1.png",
-        "alt": "spots-topic-1"
+        "path": "assets/images/spots-topic-1.png",
+        "alt": "spots-topic-1",
+        "isPopular": true
     },
     {
         "name": "觀光工廠類",
-        "path": "images/spots-topic-2.png",
-        "alt": "spots-topic-2"
+        "path": "assets/images/spots-topic-2.png",
+        "alt": "spots-topic-2",
+        "isPopular": true
     },
     {
         "name": "遊憩類",
-        "path": "images/spots-topic-3.png",
-        "alt": "spots-topic-3"
+        "path": "assets/images/spots-topic-3.png",
+        "alt": "spots-topic-3",
+        "isPopular": true
     },
     {
         "name": "休閒農業類",
-        "path": "images/spots-topic-4.png",
-        "alt": "spots-topic-4"
+        "path": "assets/images/spots-topic-4.png",
+        "alt": "spots-topic-4",
+        "isPopular": true
     },
     {
         "name": "生態類",
-        "path": "images/spots-topic-5.png",
-        "alt": "spots-topic-5"
+        "path": "assets/images/spots-topic-5.png",
+        "alt": "spots-topic-5",
+        "isPopular": true
     },
     {
         "name": "溫泉類",
-        "path": "images/spots-topic-6.png",
-        "alt": "spots-topic-6"
+        "path": "assets/images/spots-topic-6.png",
+        "alt": "spots-topic-6",
+        "isPopular": true
     },
     {
         "name": "古蹟類",
-        "path": "images/spots-topic-7.png",
-        "alt": "spots-topic-7"
+        "path": "assets/images/spots-topic-7.png",
+        "alt": "spots-topic-7",
+        "isPopular": true
+    },
+    {
+        "name": "文化類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "國家風景區類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "廟宇類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "體育健身類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "林場類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "小吃/特產類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "藝術類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "都會公園類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "森林遊樂區類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "國家公園類",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "其他",
+        "path": "",
+        "alt": "",
+        "isPopular": false
     }
 ]

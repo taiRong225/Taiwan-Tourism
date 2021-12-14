@@ -55,4 +55,6 @@ export interface TourismTopic {
     path?: string;
     /** 圖片說明 */
     alt?: string;
+    /** 是熱門 */
+    isPopular?: boolean;
 }
