@@ -21,3 +21,9 @@ slide > .item > img {
 .scrolltop-button {
     margin-bottom: 60px;
 }
+
+/** Bootstrap 5 offcanvas */
+.offcanvas {
+    width: 80%;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+}

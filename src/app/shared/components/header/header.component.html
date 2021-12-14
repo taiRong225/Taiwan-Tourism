@@ -8,22 +8,39 @@
                 <img src="assets/images/Logo-mobile.png" class="d-block d-md-none" width="118" height="30"
                     alt="Logo-mobile">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- hamburger button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="javascript:;" routerLink="/spots/search" class="nav-link px-0 ms-5">探索景點</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:;" routerLink="/activity/search" class="nav-link px-0 ms-5">節慶活動</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:;" routerLink="/restaurant/search" class="nav-link px-0 ms-5">品嚐美食</a>
-                    </li>
-                </ul>
+
+            <!-- offcanvas -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title py-3" id="offcanvasExampleLabel">
+                        <img src="assets/images/Logo-mobile.png" width="118" height="30" alt="Logo-mobile">
+                    </h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="javascript:;" routerLink="/spots/search" class="nav-link px-0 ms-5"
+                                data-bs-dismiss="offcanvas">探索景點</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" routerLink="/activity/search" class="nav-link px-0 ms-5"
+                                data-bs-dismiss="offcanvas">節慶活動</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" routerLink="/restaurant/search" class="nav-link px-0 ms-5"
+                                data-bs-dismiss="offcanvas">品嚐美食</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
