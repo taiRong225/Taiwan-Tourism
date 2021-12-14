@@ -1,32 +1,50 @@
 [
     {
         "name": "節慶活動",
-        "path": "images/activity-topic-1.png",
-        "alt": "activity-topic-1"
+        "path": "assets/images/activity-topic-1.png",
+        "alt": "activity-topic-1",
+        "isPopular": true
     },
     {
         "name": "自行車活動",
-        "path": "images/activity-topic-2.png",
-        "alt": "activity-topic-2"
+        "path": "assets/images/activity-topic-2.png",
+        "alt": "activity-topic-2",
+        "isPopular": true
     },
     {
         "name": "遊憩活動",
-        "path": "images/activity-topic-3.png",
-        "alt": "activity-topic-3"
+        "path": "assets/images/activity-topic-3.png",
+        "alt": "activity-topic-3",
+        "isPopular": true
     },
     {
         "name": "產業文化活動",
-        "path": "images/activity-topic-4.png",
-        "alt": "activity-topic-4"
+        "path": "assets/images/activity-topic-4.png",
+        "alt": "activity-topic-4",
+        "isPopular": true
     },
     {
         "name": "年度活動",
-        "path": "images/activity-topic-5.png",
-        "alt": "activity-topic-5"
+        "path": "assets/images/activity-topic-5.png",
+        "alt": "activity-topic-5",
+        "isPopular": true
     },
     {
-        "name": "溫泉類",
-        "path": "images/activity-topic-6.png",
-        "alt": "activity-topic-6"
+        "name": "藝文活動",
+        "path": "assets/images/activity-topic-6.png",
+        "alt": "activity-topic-6",
+        "isPopular": true
+    },
+    {
+        "name": "活動快報",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "其他",
+        "path": "",
+        "alt": "",
+        "isPopular": false
     }
 ]

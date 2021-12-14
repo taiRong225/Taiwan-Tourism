@@ -31,6 +31,9 @@ export class ActivitySearchComponent implements OnInit {
   /** 活動主題 */
   public topics: ActivityTopic[] = [];
 
+  /** 熱門活動主題 */
+  public popularTopics: ActivityTopic[] = [];
+
   /** 是主題 */
   public isTopic: boolean = true;
 
@@ -99,10 +102,12 @@ export class ActivitySearchComponent implements OnInit {
    */
   getActivityTopic() {
     this.activityService.getActivityTopic().subscribe(data => {
-      this.topics = data.map(item => {
-        item.path = `assets/${item.path}`;
-        return item;
-      });
+
+      // 篩選出熱門主題
+      this.popularTopics = data.filter(item => item.isPopular);
+
+      // 全部主題
+      this.topics = data;
     });
   }
 
