@@ -8,6 +8,7 @@ import { ImageDirective } from './directives/image.directive';
 import { NearbyListComponent } from './components/nearby-list/nearby-list.component';
 import { NearbyInfoComponent } from './components/nearby-info/nearby-info.component';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { InputDateDirective } from './directives/input-date.directive';
 
 const components = [
   HeaderComponent,
@@ -22,7 +23,8 @@ const pipes = [
 ]
 
 const directives = [
-  ImageDirective
+  ImageDirective,
+  InputDateDirective
 ]
 
 const modules = [
