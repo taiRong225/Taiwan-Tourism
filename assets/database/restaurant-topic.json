@@ -1,32 +1,56 @@
 [
     {
         "name": "地方特產",
-        "path": "images/restaurant-category-1.png",
-        "alt": "restaurant-category-1"
+        "path": "assets/images/restaurant-category-1.png",
+        "alt": "restaurant-category-1",
+        "isPopular": true
     },
     {
         "name": "中式美食",
-        "path": "images/restaurant-category-2.png",
-        "alt": "restaurant-category-2"
+        "path": "assets/images/restaurant-category-2.png",
+        "alt": "restaurant-category-2",
+        "isPopular": true
     },
     {
         "name": "甜點冰品",
-        "path": "images/restaurant-category-3.png",
-        "alt": "restaurant-category-3"
+        "path": "assets/images/restaurant-category-3.png",
+        "alt": "restaurant-category-3",
+        "isPopular": true
     },
     {
         "name": "異國料理",
-        "path": "images/restaurant-category-4.png",
-        "alt": "restaurant-category-4"
+        "path": "assets/images/restaurant-category-4.png",
+        "alt": "restaurant-category-4",
+        "isPopular": true
     },
     {
         "name": "伴手禮",
-        "path": "images/restaurant-category-5.png",
-        "alt": "restaurant-category-5"
+        "path": "assets/images/restaurant-category-5.png",
+        "alt": "restaurant-category-5",
+        "isPopular": true
     },
     {
         "name": "素食",
-        "path": "images/restaurant-category-6.png",
-        "alt": "restaurant-category-6"
+        "path": "assets/images/restaurant-category-6.png",
+        "alt": "restaurant-category-6",
+        "isPopular": true
+    },
+    {
+        "name": "夜市小吃",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "火烤料理",
+        "path": "",
+        "alt": "",
+        "isPopular": false
+    },
+    {
+        "name": "其他",
+        "path": "",
+        "alt": "",
+        "isPopular": false
     }
 ]
