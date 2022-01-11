@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item"><a href="javascript:;" routerLink="/activity/search">節慶活動</a></li>
                 <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToActivitySearch()">{{ activity.City
                         }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ activity.Name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ activity.ActivityName }}</li>
             </ol>
         </nav>
     </div>
@@ -29,9 +29,9 @@
 </div>
 
 <!-- 主內容 -->
-<div @fade class="pt-7" *ngIf="activity.ID">
+<div @fade class="pt-7" *ngIf="activity.ActivityID">
     <div class="container">
-        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ activity.Name }}</h3>
+        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ activity.ActivityName }}</h3>
         <div class="mb-7">
             <span class="badge border border-info rounded-pill text-info fs-sm fs-md-5 fw-normal me-2"
                 *ngFor="let class of activity.Classes"># {{ class }}</span>
@@ -83,7 +83,8 @@
                 <app-google-map *ngIf="hasAddress" [address]="activity.Address"></app-google-map>
 
                 <!-- 周邊資訊 -->
-                <app-nearby-info *ngIf="activity.ID" [ID]="activity.ID" [TourismType]="tourismType"></app-nearby-info>
+                <app-nearby-info *ngIf="activity.ActivityID" [ID]="activity.ActivityID" [TourismType]="tourismType">
+                </app-nearby-info>
             </div>
         </div>
     </div>
@@ -102,8 +103,8 @@
                 <div @fade class="img-wrap">
                     <img [src]="activity.Picture.PictureUrl1" [alt]="activity.Picture.PictureDescription1" appImage>
                 </div>
-                <a [routerLink]="['/activity', activity.ID]">
-                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ activity.Name }}</h3>
+                <a [routerLink]="['/activity', activity.ActivityID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ activity.ActivityName }}</h3>
                 </a>
                 <i class="fas fa-map-marker-alt me-1"></i>{{ activity.City}}
             </div>

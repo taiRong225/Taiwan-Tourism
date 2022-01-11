@@ -210,8 +210,8 @@ export class HomeComponent implements OnInit {
       // 新的輪播資料
       const carousels: Carousel[] = data.map(item => {
         const obj: Carousel = {
-          ID: item.ID,
-          title: item.Name,
+          ID: item.ActivityID,
+          title: item.ActivityName,
           subTitle: item.City,
           path: item.Picture.PictureUrl1,
           alt: item.Picture.PictureDescription2,

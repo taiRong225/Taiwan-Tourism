@@ -145,14 +145,14 @@ export class NearbyListComponent implements OnInit {
     this.activityService.getActivities(options).subscribe(data => {
 
       /** 新的活動資料 */
-      let newsActivity: Restaurant[] = data.map(item => {
+      let newsActivity: Activity[] = data.map(item => {
         item.City = item.City || environment.noProvideCity;
         item.Picture.PictureUrl1 = item.Picture.PictureUrl1 || environment.noImage250x200
         return item;
       });
 
       // 過濾掉自己
-      this.activities = newsActivity.filter(item => item.ID !== this.ID);
+      this.activities = newsActivity.filter(item => item.ActivityID !== this.ID);
     });
   }
 

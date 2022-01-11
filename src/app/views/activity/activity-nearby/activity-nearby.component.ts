@@ -47,7 +47,7 @@ export class ActivityNearbyComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `ActivityID eq '${ID}'`
     }
 
     this.activityService.getActivities(options).subscribe(data => {

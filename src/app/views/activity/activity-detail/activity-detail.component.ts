@@ -64,7 +64,7 @@ export class ActivityDetailComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `ActivityID eq '${ID}'`
     }
 
     this.activityService.getActivities(options).subscribe(data => {
@@ -174,7 +174,7 @@ export class ActivityDetailComponent implements OnInit {
     /** 搜尋條件 */
     const options: RequestBase = {
       $top: 4,
-      $filter: `ID ne '${this.activity.ID}'` // 過濾掉自己
+      $filter: `ActivityID ne '${this.activity.ActivityID}'` // 過濾掉自己
     }
 
     this.activityService.getCityActivities(city, options).subscribe(data => {

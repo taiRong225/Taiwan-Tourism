@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item"><a href="javascript:;" routerLink="/activity/search">節慶活動</a></li>
                 <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToActivitySearch()">{{ activity.City
                         }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ activity.Name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ activity.ActivityName }}</li>
             </ol>
         </nav>
     </div>
@@ -16,9 +16,9 @@
 <!-- 標題文字 -->
 <div class="d-flex flex-column align-items-center">
     <span class="fs-5 fw-bold text-info">{{ activity.City }}</span>
-    <h3 class="fs-4 fs-md-lg fw-bold">{{ activity.Name }}</h3>
+    <h3 class="fs-4 fs-md-lg fw-bold">{{ activity.ActivityName }}</h3>
 </div>
 
 <!-- 附近點的列表 -->
-<app-nearby-list *ngIf="activity.ID" [ID]="activity.ID" [TourismType]="tourismType"
+<app-nearby-list *ngIf="activity.ActivityID" [ID]="activity.ActivityID" [TourismType]="tourismType"
     [PositionLon]="activity.Position.PositionLon" [PositionLat]="activity.Position.PositionLat"></app-nearby-list>

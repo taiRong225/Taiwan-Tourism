@@ -8,9 +8,9 @@ import { Picture, PointType, TourismPicture, TourismTopic } from "./common.model
  */
 export interface Activity {
     /** 活動訊息代碼 */
-    ID?: string;
+    ActivityID?: string;
     /** 活動名稱 */
-    Name?: string;
+    ActivityName?: string;
     /** 活動簡述 */
     Description?: string;
     /** 活動參與對象 */
