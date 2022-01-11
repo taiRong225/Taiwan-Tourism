@@ -51,7 +51,7 @@ export class SpotsNearbyComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `ScenicSpotID eq '${ID}'`
     }
 
     this.spotsService.getSpotsList(options).subscribe(data => {

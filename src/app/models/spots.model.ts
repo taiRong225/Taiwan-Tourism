@@ -8,9 +8,9 @@ import { Picture, PointType, TourismPicture, TourismTopic } from "./common.model
  */
 export interface Spots {
     /** 景點代碼 */
-    ID?: string;
+    ScenicSpotID?: string;
     /** 景點名稱 */
-    Name?: string;
+    ScenicSpotName?: string;
     /** 景點特色詳細說明 */
     DescriptionDetail?: string;
     /** 景點服務電話 */

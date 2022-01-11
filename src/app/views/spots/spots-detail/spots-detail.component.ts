@@ -64,7 +64,7 @@ export class SpotsDetailComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `ScenicSpotID eq '${ID}'`
     }
 
     this.spotsService.getSpotsList(options).subscribe(data => {
@@ -177,7 +177,7 @@ export class SpotsDetailComponent implements OnInit {
     /** 搜尋條件 */
     const options: RequestBase = {
       $top: 4,
-      $filter: `ID ne '${this.spots.ID}'` // 過濾掉自己
+      $filter: `ScenicSpotID ne '${this.spots.ScenicSpotID}'` // 過濾掉自己
     }
 
     this.spotsService.getCitySpotsList(city, options).subscribe(data => {

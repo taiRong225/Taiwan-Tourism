@@ -72,8 +72,8 @@
                 <div @fade class="img-wrap">
                     <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1" appImage>
                 </div>
-                <a [routerLink]="['/spots', spots.ID]" target="_blank">
-                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                <a [routerLink]="['/spots', spots.ScenicSpotID]" target="_blank">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.ScenicSpotName }}</h3>
                 </a>
                 <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City }}
             </div>

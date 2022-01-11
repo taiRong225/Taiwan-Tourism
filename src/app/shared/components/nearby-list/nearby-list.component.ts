@@ -94,7 +94,7 @@ export class NearbyListComponent implements OnInit {
       });
 
       // 過濾掉自己
-      this.spotsList = newSpots.filter(item => item.ID !== this.ID);
+      this.spotsList = newSpots.filter(item => item.ScenicSpotID !== this.ID);
     });
   }
 

@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item"><a href="javascript:;" routerLink="/spots/search">探索景點</a></li>
                 <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToSpotsSearch()">{{ spots.City
                         }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ spots.Name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ spots.ScenicSpotName }}</li>
             </ol>
         </nav>
     </div>
@@ -29,9 +29,9 @@
 </div>
 
 <!-- 主內容 -->
-<div @fade class="pt-7" *ngIf="spots.ID">
+<div @fade class="pt-7" *ngIf="spots.ScenicSpotID">
     <div class="container">
-        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ spots.Name }}</h3>
+        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ spots.ScenicSpotName }}</h3>
         <div class="mb-7">
             <span class="badge border border-info rounded-pill text-info fs-sm fs-md-5 fw-normal me-2"
                 *ngFor="let class of spots.Classes"># {{ class }}</span>
@@ -79,7 +79,8 @@
                 <app-google-map *ngIf="hasAddress" [address]="spots.Address"></app-google-map>
 
                 <!-- 周邊資訊 -->
-                <app-nearby-info *ngIf="spots.ID" [ID]="spots.ID" [TourismType]="tourismType"></app-nearby-info>
+                <app-nearby-info *ngIf="spots.ScenicSpotID" [ID]="spots.ScenicSpotID" [TourismType]="tourismType">
+                </app-nearby-info>
             </div>
         </div>
     </div>
@@ -97,8 +98,8 @@
                 <div @fade class="img-wrap">
                     <img [src]="spots.Picture.PictureUrl1" [alt]="spots.Picture.PictureDescription1" appImage>
                 </div>
-                <a [routerLink]="['/spots', spots.ID]">
-                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.Name }}</h3>
+                <a [routerLink]="['/spots', spots.ScenicSpotID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ spots.ScenicSpotName }}</h3>
                 </a>
                 <i class="fas fa-map-marker-alt me-1"></i>{{ spots.City}}
             </div>

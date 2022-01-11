@@ -7,7 +7,7 @@
                 <li class="breadcrumb-item"><a href="javascript:;" routerLink="/spots/search">探索景點</a></li>
                 <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToSpotsSearch()">{{ spots.City
                         }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ spots.Name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ spots.ScenicSpotName }}</li>
             </ol>
         </nav>
     </div>
@@ -16,9 +16,9 @@
 <!-- 標題文字 -->
 <div class="d-flex flex-column align-items-center">
     <span class="fs-5 fw-bold text-info">{{ spots.City }}</span>
-    <h3 class="fs-4 fs-md-lg fw-bold">{{ spots.Name }}</h3>
+    <h3 class="fs-4 fs-md-lg fw-bold">{{ spots.ScenicSpotName }}</h3>
 </div>
 
 <!-- 附近點的列表 -->
-<app-nearby-list *ngIf="spots.ID" [ID]="spots.ID" [TourismType]="tourismType" [PositionLon]="spots.Position.PositionLon"
-    [PositionLat]="spots.Position.PositionLat"></app-nearby-list>
+<app-nearby-list *ngIf="spots.ScenicSpotID" [ID]="spots.ScenicSpotID" [TourismType]="tourismType"
+    [PositionLon]="spots.Position.PositionLon" [PositionLat]="spots.Position.PositionLat"></app-nearby-list>
