@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item"><a href="javascript:;" (click)="navigateToRestaurantSearch()">{{
                         restaurant.City
                         }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ restaurant.Name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ restaurant.RestaurantName }}</li>
             </ol>
         </nav>
     </div>
@@ -30,9 +30,9 @@
 </div>
 
 <!-- 主內容 -->
-<div @fade class="pt-7" *ngIf="restaurant.ID">
+<div @fade class="pt-7" *ngIf="restaurant.RestaurantID">
     <div class="container">
-        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ restaurant.Name }}</h3>
+        <h3 class="fs-4 fs-md-lg fw-light mb-3">{{ restaurant.RestaurantName }}</h3>
         <div class="mb-7">
             <span class="badge border border-info rounded-pill text-info fs-sm fs-md-5 fw-normal"># {{ restaurant.Class
                 }}</span>
@@ -69,7 +69,8 @@
                 <app-google-map *ngIf="hasAddress" [address]="restaurant.Address"></app-google-map>
 
                 <!-- 周邊資訊 -->
-                <app-nearby-info *ngIf="restaurant.ID" [ID]="restaurant.ID" [TourismType]="tourismType">
+                <app-nearby-info *ngIf="restaurant.RestaurantID" [ID]="restaurant.RestaurantID"
+                    [TourismType]="tourismType">
                 </app-nearby-info>
             </div>
         </div>
@@ -89,8 +90,8 @@
                 <div @fade class="img-wrap">
                     <img [src]="restaurant.Picture.PictureUrl1" [alt]="restaurant.Picture.PictureDescription1" appImage>
                 </div>
-                <a [routerLink]="['/restaurant', restaurant.ID]">
-                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.Name }}</h3>
+                <a [routerLink]="['/restaurant', restaurant.RestaurantID]">
+                    <h3 class="fs-5 fw-bold text-dark mt-2">{{ restaurant.RestaurantName }}</h3>
                 </a>
                 <i class="fas fa-map-marker-alt me-1"></i>{{ restaurant.City}}
             </div>

@@ -64,7 +64,7 @@ export class RestaurantDetailComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `RestaurantID eq '${ID}'`
     }
 
     this.restaurantService.getRestaurants(options).subscribe(data => {
@@ -168,7 +168,7 @@ export class RestaurantDetailComponent implements OnInit {
     /** 搜尋條件 */
     const options: RequestBase = {
       $top: 4,
-      $filter: `ID ne '${this.restaurant.ID}'` // 過濾掉自己
+      $filter: `RestaurantID ne '${this.restaurant.RestaurantID}'` // 過濾掉自己
     }
 
     this.restaurantService.getCityRestaurants(city, options).subscribe(data => {

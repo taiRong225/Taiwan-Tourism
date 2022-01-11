@@ -8,9 +8,9 @@ import { Picture, PointType, TourismPicture, TourismTopic } from "./common.model
  */
 export interface Restaurant {
     /** 餐飲店家代碼 */
-    ID?: string;
+    RestaurantID?: string;
     /** 餐飲店家名稱 */
-    Name?: string;
+    RestaurantName?: string;
     /** 店家簡述 */
     Description?: string;
     /** 店家地址 */

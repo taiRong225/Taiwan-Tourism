@@ -47,7 +47,7 @@ export class RestaurantNearbyComponent implements OnInit {
 
     /** 搜尋條件 */
     const options: RequestBase = {
-      $filter: `ID eq '${ID}'`
+      $filter: `RestaurantID eq '${ID}'`
     }
 
     this.restaurantService.getRestaurants(options).subscribe(data => {
