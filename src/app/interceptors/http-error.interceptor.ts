@@ -3,24 +3,24 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-import jsSHA from 'jssha';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class HttpErrorInterceptor implements HttpInterceptor {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private authService: AuthService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        // 加入 Http Reauest Header
-        request = this.addToken(request, this.getAuthorizationHeader());
+        // 檢查登入狀態
+        if (this.authService.isLoggedIn()) {
+            request = this.addToken(request, this.authService.getAuth());
+        }
 
         return next.handle(request).pipe(catchError(error => {
             console.log(error);
-
             return throwError(error);
         }));
     }
@@ -34,30 +34,11 @@ export class HttpErrorInterceptor implements HttpInterceptor {
      * @return {*}
      * @memberof HttpErrorInterceptor
      */
-    private addToken(request: HttpRequest<any>, headers: any) {
+    private addToken(request: HttpRequest<any>, token: string) {
         return request.clone({
-            setHeaders: headers
+            setHeaders: {
+                authorization: `Bearer ${token}`
+            }
         });
-    }
-
-    /**
-     * 取得 API 驗證用Token
-     *
-     * @private
-     * @return {*}
-     * @memberof HttpErrorInterceptor
-     */
-    private getAuthorizationHeader() {
-        var AppID = environment.APP_ID;
-        var AppKey = environment.APP_KEY;
-        var GMTString = new Date().toUTCString();
-        var ShaObj = new jsSHA('SHA-1', 'TEXT');
-        ShaObj.setHMACKey(AppKey, 'TEXT');
-        ShaObj.update('x-date: ' + GMTString);
-        var HMAC = ShaObj.getHMAC('B64');
-        var Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
-
-        // 如果要將js運行在伺服器，可額外加入 'Accept-Encoding': 'gzip'，要求壓縮以減少網路傳輸資料量
-        return { 'Authorization': Authorization, 'X-Date': GMTString /*,'Accept-Encoding': 'gzip'*/ };
     }
 }
