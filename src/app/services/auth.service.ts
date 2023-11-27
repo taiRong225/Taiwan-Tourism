@@ -46,6 +46,15 @@ export class AuthService {
     if (token) localStorage.setItem(this.key, token);
   }
 
+  /**
+   * 移除JWT
+   *
+   * @memberof AuthService
+   */
+  removeAuth() {
+    localStorage.removeItem(this.key);
+  }
+
   getAuthorizationHeader(): Observable<JWT> {
     const authUri: string = 'https://tdx.transportdata.tw/auth/realms/TDXConnect/protocol/openid-connect/token';
 

@@ -21,6 +21,12 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 
         return next.handle(request).pipe(catchError(error => {
             console.log(error);
+
+            if (error instanceof HttpErrorResponse && error.status === 401) {
+                this.authService.removeAuth();
+                window.location.reload();
+            }
+
             return throwError(error);
         }));
     }
